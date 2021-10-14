@@ -20,8 +20,10 @@ import Utils.Point;
 import java.util.ArrayList;
 
 public class LevelFour extends Map {
-
-    public LevelFour() { super("level_four.txt", new MasterMapTileset(), new Point(103,17)); }
+	
+	// Pass "level_four2.txt" parameter -- contains adjusted map elements
+	// Also, move player start position to beginning of level
+	public LevelFour() { super("level_four2.txt", new MasterMapTileset(), new Point(1,17)); }
 
     @Override
     public ArrayList<Enemy> loadEnemies() {
@@ -55,7 +57,8 @@ public class LevelFour extends Map {
         enemies.add(new Mouse(getPositionByTileIndex(66, 23), Direction.LEFT));
         enemies.add(new Mouse(getPositionByTileIndex(72, 23), Direction.LEFT));
 
-        enemies.add(new BossMouse(getPositionByTileIndex(109, 20), Direction.LEFT));
+        // Fix Boss Mouse spawn position
+        enemies.add(new BossMouse(getPositionByTileIndex(109, 16), Direction.LEFT));
 
         return enemies;
     }
