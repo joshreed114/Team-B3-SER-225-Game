@@ -41,6 +41,19 @@ public class Hairball extends PowerUp {
     }
 
     @Override
+    public void update() {
+        // if timer is up, sets map entity status to REMOVED
+        // camera class will use this function to update the hairball when no enemies are on screen
+        if(existenceTimer.isTimeUp()) {
+            this.mapEntityStatus = MapEntityStatus.REMOVED;
+        }
+        else {
+            //move hairball forward
+            moveXHandleCollision(movementSpeed);
+        }
+    }
+
+    @Override
     public void onEndCollisionCheckX(boolean hasCollided, Direction direction) {
         // if fireball collides with anything solid on the x axis, it is removed
         if (hasCollided) {

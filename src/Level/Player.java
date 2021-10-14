@@ -380,6 +380,13 @@ public abstract class Player extends GameObject {
         }
     }
 
+    // Dangerous tiles can call this method to kill the player
+    public void killPlayer() {
+        if(!isInvincible) {
+            levelState = LevelState.PLAYER_DEAD;
+        }
+    }
+
     // other entities can call this to tell the player they beat a level
     public void completeLevel() {
         levelState = LevelState.LEVEL_COMPLETED;
