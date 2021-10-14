@@ -297,7 +297,8 @@ public class MasterMapTileset  extends Tileset {
                 .withScale(tileScale)
                 .build();
 
-        MapTileBuilder waterTile = new MapTileBuilder(waterFrame);
+        MapTileBuilder waterTile = new MapTileBuilder(waterFrame)
+                .withTileType(TileType.DANGEROUS);
 
         mapTiles.add(waterTile);
 

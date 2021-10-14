@@ -80,12 +80,16 @@ public class Camera extends Rectangle {
         }
 
         for (PowerUp powerUp : activePowerUps) {
-            /*
-            TODO: Possible BUG here. If there are no enemies in the camera view then the hairball stays in place.
-             */
-            for (Enemy enemy : activeEnemies) {
-                powerUp.update(enemy);
-            }
+            // if there are active enemies on the screen, update both hairball and enemy
+            if(activeEnemies.size() > 0) {
+                for(Enemy enemy : activeEnemies) {
+                    powerUp.update(enemy);
+                   }
+             }
+            // else, only update hairball
+             else {
+                powerUp.update();
+             }
         }
 
         for (EnhancedMapTile enhancedMapTile : activeEnhancedMapTiles) {

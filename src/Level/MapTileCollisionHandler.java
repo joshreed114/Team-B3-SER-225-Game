@@ -77,8 +77,14 @@ public class MapTileCollisionHandler {
             case JUMP_THROUGH_PLATFORM:
                 return direction == Direction.DOWN && gameObject.intersects(mapTile) &&
                         Math.round(gameObject.getScaledBoundsY2() - 1) == Math.round(mapTile.getScaledBoundsY1());
+            // if the tile is dangerous (water), and the game object is the player, the game will end upon collision
+            case DANGEROUS:
+                if(gameObject instanceof Player) {
+                    ((Player) gameObject).killPlayer();
+                }
             default:
                 return false;
         }
     }
+
 }
