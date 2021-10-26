@@ -25,9 +25,9 @@ public class GameWindow {
 		gamePanel.requestFocusInWindow();
 		gameWindow.setContentPane(gamePanel);
 		gameWindow.setResizable(false);
-		
+
 		gameWindow.setSize(Config.WIDTH, Config.HEIGHT);
-		//gameWindow.setSize(Config.WIDTHM, Config.HEIGHTM);
+		//gameWindow.setSize(Config.WIDTHS, Config.HEIGHTS);
 		//gameWindow.setSize(Config.WIDTHL, Config.HEIGHTL);
 		gameWindow.setLocationRelativeTo(null);
 		gameWindow.setVisible(true);
@@ -37,9 +37,9 @@ public class GameWindow {
 	// triggers the game loop to start as defined in the GamePanel class
 	public void startGame() {
 		gamePanel.startGame();
-		
+
 	}
-	public void paintWindow( ) 
+	public void paintWindow( )
 	{
 		gameWindow.repaint();
 		gamePanel.repaint();
