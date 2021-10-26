@@ -53,7 +53,13 @@ public class Enemy extends MapEntity {
 
     // A subclass can override this method to specify what it does when it touches the player
     public void touchedPlayer(Player player) {
-        player.hurtPlayer(this);
+        //If player is above the enemy, hurt the enemy
+        if(player.getY() + 10 < this.getY()) {
+            this.hurtEnemy(this);
+        }
+        //Otherwise, hurt the player
+        else
+            player.hurtPlayer(this);
     }
 
     public void touchedEnemy(Enemy enemy) {
@@ -64,6 +70,9 @@ public class Enemy extends MapEntity {
     public void hurtEnemy(MapEntity mapEntity) {
         if (mapEntity instanceof PowerUp) {
             this.mapEntityStatus = MapEntityStatus.REMOVED;
+        }
+        else if(mapEntity instanceof Enemy) {
+                this.mapEntityStatus = MapEntityStatus.REMOVED;
         }
     }
 }
