@@ -94,6 +94,20 @@ public class BugEnemy extends Enemy {
         }
     }
 
+
+    @Override
+    public void touchedPlayer(Player player) {
+        //If player is above the enemy, hurt the enemy
+        //New comparison due to low height of bug enemy
+        if(player.getY() + 35 < this.getY()) {
+            this.hurtEnemy(this);
+        }
+        //Otherwise, hurt the player
+        else {
+            player.hurtPlayer(this);
+        }
+    }
+
     @Override
     public HashMap<String, Frame[]> getAnimations(SpriteSheet spriteSheet) {
         return new HashMap<String, Frame[]>() {{
