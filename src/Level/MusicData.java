@@ -16,14 +16,14 @@ import javax.swing.JOptionPane;
 import Engine.Config;
 
 public class MusicData {
-	
+
 	public static File equalizer;
 	public static float dB;
 	public static Clip clip;
 	public static Game game;
-	public static synchronized void playMusic(String musicLocation, double vol) 
+	public static synchronized void playMusic(String musicLocation, double vol)
 	{
-		try 
+		try
 		{
 			File musicPath = new File(musicLocation);
 			AudioInputStream audioInput = AudioSystem.getAudioInputStream(musicPath);
@@ -34,30 +34,30 @@ public class MusicData {
 			clip.start();
 			clip.loop(Clip.LOOP_CONTINUOUSLY);
 		}
-		catch(Exception ex) 
+		catch(Exception ex)
 		{
 			ex.printStackTrace();
 		}
 	}
-	public static void setVol(double vol, Clip clip) 
+	public static void setVol(double vol, Clip clip)
 	{
 		FloatControl gain = (FloatControl)clip.getControl(FloatControl.Type.MASTER_GAIN);
 		dB = (float)(Math.log(vol)/(Math.log(10)) * 20);
 		gain.setValue(dB);
-	} 
-	public static void setVolCall(String volLevel) 
+	}
+	public static void setVolCall(String volLevel)
 	{
 		switch (volLevel)
 		{
+			case "Off": ///////// added off that sets volume to zero
+				setVol(0.0, clip);
+				break;
 			case "Low":
 				setVol(0.25, clip);
-			break;
-			case "Mid":
-				setVol(0.5, clip);
-			break;
+				break;
 			case "Full":
 				setVol(1, clip);
-			break;
+				break;
 		}
 	}
 }
