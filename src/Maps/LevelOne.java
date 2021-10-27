@@ -28,6 +28,19 @@ public class LevelOne extends Map {
         return enemies;
     }
 
+    // Add Coins
+    @Override
+    public ArrayList<Coin> loadCoins() {
+        ArrayList<Coin> coins = new ArrayList<>();
+        coins.add(new Coin(
+            ImageLoader.load("coin.png"), // Creates a buffered image
+            120,
+            400 // 120, 400 simply moves the Coin to where it is out of the way but can still be interacted with
+            //TODO: move the position of the Coin because I only put it here to make it easy to test the camera
+            ));
+        return coins;
+    }
+
     @Override
     public ArrayList<EnhancedMapTile> loadEnhancedMapTiles() {
         ArrayList<EnhancedMapTile> enhancedMapTiles = new ArrayList<>();

@@ -54,6 +54,7 @@ public abstract class Map {
     // lists to hold map entities that are a part of the map
     protected ArrayList<Enemy> enemies;
     protected ArrayList<PowerUp> powerUps;
+    protected ArrayList<Coin> coins; // Added this to store Coins in map
     protected ArrayList<EnhancedMapTile> enhancedMapTiles;
     protected ArrayList<NPC> npcs;
 
@@ -87,6 +88,11 @@ public abstract class Map {
         this.powerUps = loadPowerUps();
         for (PowerUp powerUp: this.powerUps) {
             powerUp.setMap(this);
+        }
+
+        this.coins = loadCoins();
+        for (Coin coin: this.coins) {
+            coin.setMap(this);
         }
 
         this.enhancedMapTiles = loadEnhancedMapTiles();
@@ -275,6 +281,11 @@ public abstract class Map {
         return new ArrayList<>();
     }
 
+    // list of coins defined to be a part of the map, should be overriden in a subclass
+    protected ArrayList<Coin> loadCoins() {
+        return new ArrayList<>();
+    }
+
     // list of enhanced map tiles defined to be a part of the map, should be overridden in a subclass
     protected ArrayList<EnhancedMapTile> loadEnhancedMapTiles() {
         return new ArrayList<>();
@@ -293,6 +304,7 @@ public abstract class Map {
         return enemies;
     }
     public ArrayList<PowerUp> getPowerUps() {return powerUps;}
+    public ArrayList<Coin> getCoins() {return coins;}
     public ArrayList<EnhancedMapTile> getEnhancedMapTiles() {
         return enhancedMapTiles;
     }
@@ -313,6 +325,10 @@ public abstract class Map {
     // returns all active npcs (npcs that are a part of the current update cycle) -- this changes every frame by the Camera class
     public ArrayList<NPC> getActiveNPCs() {
         return camera.getActiveNPCs();
+    }
+
+    public ArrayList<Coin> getActiveCoins() {
+        return camera.getActiveCoins();
     }
 
     // add an enemy to the map's list of enemies
