@@ -45,17 +45,15 @@ public class LevelOne extends Map {
     }
 
     // Add coin to level one to test
+    @Override
     public ArrayList<Coin> loadCoins() {
         ArrayList<Coin> coins = new ArrayList<>();
-    
-        try
-        {
-            BufferedImage image = new BufferedImage(ImageIO.read(new File("coin.png")).getWidth(null), ImageIO.read(new File("coin.png")).getHeight(null), BufferedImage.TYPE_INT_ARGB);
-            coins.add(new Coin(image, 10, 10));
-        }
-        catch (IOException e) { System.exit(0); }
-
-
+        System.out.println("Reached here");
+        coins.add(new Coin(
+            ImageLoader.load("coin.png"),
+            120,
+            400
+            ));
         return coins;
     }
 
