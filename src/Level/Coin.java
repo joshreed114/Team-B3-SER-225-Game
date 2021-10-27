@@ -8,10 +8,9 @@ import java.awt.image.*;
 
 public class Coin extends MapEntity {
 
-    //TODO: add scaling option (adjust constructor and code in scaling factor)
     public Coin(BufferedImage file, int x, int y) {
-        super(file, (float) x, (float) y); // Casting integer arguments to floats here helped me create new instances more easily during testing
-        //TODO: convert integer parameters to floats
+        super(file, (float) x, (float) y, (float) 0.4); // Casting integer arguments to floats here helped me create new instances more easily during testing
+        // Also, I put in 0.4 as the scaling ratio because it seemed to look most appropriate compared to the size of the player's avatar
 	}
 
     @Override
