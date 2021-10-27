@@ -14,6 +14,22 @@ import Utils.Point;
 
 import java.util.ArrayList;
 
+
+
+
+/*
+All imports for adding Coin to this level
+// Needs to be fixed obviously, this is just a quick solution
+*/
+
+import java.awt.image.BufferedImage;
+
+import javax.imageio.*;
+import java.io.*;
+
+/*
+*/
+
 public class LevelOne extends Map {
 
     public LevelOne() {
@@ -26,6 +42,21 @@ public class LevelOne extends Map {
         enemies.add(new BugEnemy(getPositionByTileIndex(15, 13), Direction.LEFT));
         enemies.add(new DinosaurEnemy(getPositionByTileIndex(19, 5).addY(2), getPositionByTileIndex(22, 5).addY(2), Direction.RIGHT));
         return enemies;
+    }
+
+    // Add coin to level one to test
+    public ArrayList<Coin> loadCoins() {
+        ArrayList<Coin> coins = new ArrayList<>();
+    
+        try
+        {
+            BufferedImage image = new BufferedImage(ImageIO.read(new File("coin.png")).getWidth(null), ImageIO.read(new File("coin.png")).getHeight(null), BufferedImage.TYPE_INT_ARGB);
+            coins.add(new Coin(image, 10, 10));
+        }
+        catch (IOException e) { System.exit(0); }
+
+
+        return coins;
     }
 
     @Override
