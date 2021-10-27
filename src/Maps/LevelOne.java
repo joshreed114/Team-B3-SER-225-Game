@@ -14,22 +14,6 @@ import Utils.Point;
 
 import java.util.ArrayList;
 
-
-
-
-/*
-All imports for adding Coin to this level
-// Needs to be fixed obviously, this is just a quick solution
-*/
-
-import java.awt.image.BufferedImage;
-
-import javax.imageio.*;
-import java.io.*;
-
-/*
-*/
-
 public class LevelOne extends Map {
 
     public LevelOne() {
@@ -52,6 +36,7 @@ public class LevelOne extends Map {
             ImageLoader.load("coin.png"), // Creates a buffered image
             120,
             400 // 120, 400 simply moves the Coin to where it is out of the way but can still be interacted with
+            //TODO: move the position of the Coin because I only put it here to make it easy to test the camera
             ));
         return coins;
     }

@@ -171,7 +171,7 @@ public class Camera extends Rectangle {
             } else if (coin.getMapEntityStatus() == MapEntityStatus.ACTIVE) {
                 coin.setMapEntityStatus(MapEntityStatus.INACTIVE);
             } else if (coin.getMapEntityStatus() == MapEntityStatus.REMOVED) {
-                map.getEnhancedMapTiles().remove(i);
+                map.getCoins().remove(i);
             }
         }
         return activeCoins;
