@@ -44,15 +44,14 @@ public class LevelOne extends Map {
         return enemies;
     }
 
-    // Add coin to level one to test
+    // Add Coins
     @Override
     public ArrayList<Coin> loadCoins() {
         ArrayList<Coin> coins = new ArrayList<>();
-        System.out.println("Reached here");
         coins.add(new Coin(
-            ImageLoader.load("coin.png"),
+            ImageLoader.load("coin.png"), // Creates a buffered image
             120,
-            400
+            400 // 120, 400 simply moves the Coin to where it is out of the way but can still be interacted with
             ));
         return coins;
     }
