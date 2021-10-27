@@ -22,7 +22,7 @@ import java.util.ArrayList;
 public abstract class Player extends GameObject {
 
     // store number of coins player has collected
-    protected int numCoins;
+    protected int numCoins = 0;
     // values that affect player movement
     // these should be set in a subclass
     protected float walkSpeed = 0;
