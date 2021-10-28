@@ -56,8 +56,8 @@ public class Fireball extends Enemy {
 
     @Override
     public void touchedPlayer(Player player) {
-        // if fireball touches player, it disappears
-        super.touchedPlayer(player);
+        // if fireball touches player, it hurts the player, and disappears
+        player.hurtPlayer(this);
         this.mapEntityStatus = MapEntityStatus.REMOVED;
     }
 
