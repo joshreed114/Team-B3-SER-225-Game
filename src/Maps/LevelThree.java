@@ -15,9 +15,18 @@ import Utils.Point;
 import java.util.ArrayList;
 
 public class LevelThree extends Map {
-    public LevelThree() {
-        super("level_three.txt", new MasterMapTileset(), new Point(1, 44));
-    }
+
+        public LevelThree() {
+                super("level_three.txt", new MasterMapTileset(), new Point(1, 44));
+        }
+
+        // TESTING
+
+        /*
+        public LevelThree() {
+                super("level_three.txt", new MasterMapTileset(), new Point(112, 38));
+            }
+            */
 
     @Override
     public ArrayList<Enemy> loadEnemies() {
@@ -46,6 +55,38 @@ public class LevelThree extends Map {
         enemies.add(new DinosaurEnemy(getPositionByTileIndex(93, 42).addY(2), getPositionByTileIndex(95, 42).addY(2), Direction.RIGHT));
 
         return enemies;
+    }
+
+    // Add Coins to level
+    @Override
+    public ArrayList<Coin> loadCoins() {
+        ArrayList<Coin> coins = new ArrayList<>();
+
+        coins.add(new Coin(
+                ImageLoader.load("coin.png"),
+                2554,
+                1900
+        ));
+
+        coins.add(new Coin(
+                ImageLoader.load("coin.png"),
+                3564,
+                2024
+        ));
+
+        coins.add(new Coin(
+                ImageLoader.load("coin.png"),
+                2554,
+                924
+        ));
+
+        coins.add(new Supercoin(
+                ImageLoader.load("supercoin.png"),
+                4328,
+                1500
+        ));
+
+        return coins;
     }
 
     @Override

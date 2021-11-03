@@ -20,6 +20,15 @@ public class LevelOne extends Map {
         super("test_map.txt", new CommonTileset(), new Point(1, 11));
     }
 
+    // TESTING
+    
+    /*
+    public LevelOne() {
+        super("test_map.txt", new CommonTileset(), new Point(32, 10));
+    }
+    */
+    
+
     @Override
     public ArrayList<Enemy> loadEnemies() {
         ArrayList<Enemy> enemies = new ArrayList<>();
