@@ -31,7 +31,7 @@ public class Game {
     {
         new Game();
         pLS.playTheMusic();
-    }
+    }   
 
     public Game() {
         GameWindow gameWindow = new GameWindow();

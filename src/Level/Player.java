@@ -22,7 +22,7 @@ import java.util.ArrayList;
 public abstract class Player extends GameObject {
 
     // store number of coins player has collected
-    protected int numCoins;
+    protected int numCoins = 0;
     // values that affect player movement
     // these should be set in a subclass
     protected float walkSpeed = 0;
@@ -83,8 +83,8 @@ public abstract class Player extends GameObject {
         File walkSound = new File("Walking on concrete sound effect YouTube.wav");
     }
 
-    // increment number of coins player has collected by 1
-    public void addCoin() { this.numCoins = this.numCoins + 1; }
+    // increment number of coins player has collected by integer argument
+    public void addCoin(int value) { this.numCoins += value; }
 
     // return number of coins player has collected
     public int getCoins() { return this.numCoins; }

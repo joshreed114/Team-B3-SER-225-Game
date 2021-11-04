@@ -20,6 +20,15 @@ public class LevelOne extends Map {
         super("test_map.txt", new CommonTileset(), new Point(1, 11));
     }
 
+    // TESTING
+    
+    /*
+    public LevelOne() {
+        super("test_map.txt", new CommonTileset(), new Point(32, 10));
+    }
+    */
+    
+
     @Override
     public ArrayList<Enemy> loadEnemies() {
         ArrayList<Enemy> enemies = new ArrayList<>();
@@ -28,16 +37,29 @@ public class LevelOne extends Map {
         return enemies;
     }
 
-    // Add Coins
+    // Add Coins to level
     @Override
     public ArrayList<Coin> loadCoins() {
         ArrayList<Coin> coins = new ArrayList<>();
+
         coins.add(new Coin(
-            ImageLoader.load("coin.png"), // Creates a buffered image
-            120,
-            400 // 120, 400 simply moves the Coin to where it is out of the way but can still be interacted with
-            //TODO: move the position of the Coin because I only put it here to make it easy to test the camera
+            ImageLoader.load("coin.png"),
+            347,
+            726
             ));
+
+        coins.add(new Coin(
+            ImageLoader.load("coin.png"),
+            915,
+            630
+            ));
+
+        coins.add(new Coin(
+            ImageLoader.load("coin.png"),
+            1020,
+            503
+            ));
+
         return coins;
     }
 
