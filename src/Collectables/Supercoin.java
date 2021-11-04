@@ -1,6 +1,9 @@
-package Level;
+package Collectables;
 
 import java.awt.image.*;
+
+import Level.MapEntityStatus;
+import Level.Player;
 
 // Extends Coin.java to create new Supercoin (a Coin that is worth 5 instead of 1)
 // Resources > "supercoin.png"

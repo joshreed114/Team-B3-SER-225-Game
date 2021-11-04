@@ -1,15 +1,19 @@
-package Level;
+package Collectables;
 
 import java.awt.image.*;
+
+import Level.Collectable;
+import Level.MapEntityStatus;
+import Level.Player;
 
 // Implements collectables (as opposed to PowerUps)
 // NOTE: Collectables interact with players while PowerUps are meant to interact with enemies
 
-public class Collectable extends MapEntity {
+public class SpeedBoost extends Collectable {
 
-    public Collectable(BufferedImage file, int x, int y, float z)
+    public SpeedBoost(BufferedImage file, int x, int y, float z)
     {
-        super(file, (float) x, (float) y, z); // Casting integer arguments to floats here helped me create new instances more easily during testing
+        super(file, x, y, z); // Casting integer arguments to floats here helped me create new instances more easily during testing
 	}
 
     @Override

@@ -1,6 +1,10 @@
-package Level;
+package Collectables;
 
 import java.awt.image.*;
+
+import Level.Collectable;
+import Level.MapEntityStatus;
+import Level.Player;
 
 // Implements Coin ("coin.png" > Resources) entities (does so in the same way as the game implements Enemies and Power Ups)
 // This file is a modified Enemy.java replication
@@ -37,8 +41,8 @@ public class Coin extends Collectable {
 
     @Override
     public void touchedPlayer(Player player) {
-        player.addCoin(value); // Calls method in Player class to increment number of coins the player has collected by 1
-        this.mapEntityStatus = MapEntityStatus.REMOVED; // Stop drawing graphic ("coin.png") on-screen
+        player.addCoin(value); // Calls method in Player class to increment number of coins the player has collected
+        this.mapEntityStatus = MapEntityStatus.REMOVED; // Stop drawing graphic (here: "coin.png") on-screen
     }
 
 }

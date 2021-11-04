@@ -14,6 +14,9 @@ import Utils.Point;
 
 import java.util.ArrayList;
 
+import Collectables.Coin;
+import Collectables.Supercoin;
+
 public class LevelThree extends Map {
 
         public LevelThree() {

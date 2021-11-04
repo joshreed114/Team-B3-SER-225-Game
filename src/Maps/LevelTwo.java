@@ -18,6 +18,8 @@ import Utils.Point;
 
 import java.util.ArrayList;
 
+import Collectables.Coin;
+
 public class LevelTwo extends Map {
 
         
