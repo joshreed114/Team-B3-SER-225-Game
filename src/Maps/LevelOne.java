@@ -39,28 +39,28 @@ public class LevelOne extends Map {
 
     // Add Coins to level
     @Override
-    public ArrayList<Coin> loadCoins() {
-        ArrayList<Coin> coins = new ArrayList<>();
+    public ArrayList<Collectable> loadCollectables() {
+        ArrayList<Collectable> collectables = new ArrayList<>();
 
-        coins.add(new Coin(
+        collectables.add(new Coin(
             ImageLoader.load("coin.png"),
             347,
             726
             ));
 
-        coins.add(new Coin(
+        collectables.add(new Coin(
             ImageLoader.load("coin.png"),
             915,
             630
             ));
 
-        coins.add(new Coin(
+        collectables.add(new Coin(
             ImageLoader.load("coin.png"),
             1020,
             503
             ));
 
-        return coins;
+        return collectables;
     }
 
     @Override

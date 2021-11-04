@@ -9,13 +9,13 @@ import java.awt.image.*;
 
 // Note: When creating new instances of Coin ( & Supercoin, etc.), pass an Image Loader as the first argument
 
-public class Coin extends MapEntity {
+public class Coin extends Collectable {
 
     private int value = 1; // Incrementation value for numCoins in Player [value of this coin type]
 
     public Coin(BufferedImage file, int x, int y)
     {
-        super(file, (float) x, (float) y, (float) 0.4); // Casting integer arguments to floats here helped me create new instances more easily during testing
+        super(file, x, y, 0.4f);
 
         // Also, I put in 0.4 as the scaling ratio because it seemed to look most appropriate compared to the size of the player's avatar
         // The scaling factor should probably be stored in a variable elsewhere instead of directly in the constructor,
@@ -29,12 +29,13 @@ public class Coin extends MapEntity {
         super.initialize();
     }
 
+    @Override
     public void update(Player player) {
         super.update();
         if (intersects(player)) { touchedPlayer(player); }
     }
 
-    // A subclass can override this method to specify what it does when it touches the player
+    @Override
     public void touchedPlayer(Player player) {
         player.addCoin(value); // Calls method in Player class to increment number of coins the player has collected by 1
         this.mapEntityStatus = MapEntityStatus.REMOVED; // Stop drawing graphic ("coin.png") on-screen

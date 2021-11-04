@@ -59,34 +59,34 @@ public class LevelThree extends Map {
 
     // Add Coins to level
     @Override
-    public ArrayList<Coin> loadCoins() {
-        ArrayList<Coin> coins = new ArrayList<>();
+    public ArrayList<Collectable> loadCollectables() {
+        ArrayList<Collectable> collectables = new ArrayList<>();
 
-        coins.add(new Coin(
+        collectables.add(new Coin(
                 ImageLoader.load("coin.png"),
                 2554,
                 1900
         ));
 
-        coins.add(new Coin(
+        collectables.add(new Coin(
                 ImageLoader.load("coin.png"),
                 3564,
                 2024
         ));
 
-        coins.add(new Coin(
+        collectables.add(new Coin(
                 ImageLoader.load("coin.png"),
                 2554,
                 924
         ));
 
-        coins.add(new Supercoin(
+        collectables.add(new Supercoin(
                 ImageLoader.load("supercoin.png"),
                 4328,
                 1500
         ));
 
-        return coins;
+        return collectables;
     }
 
     @Override
