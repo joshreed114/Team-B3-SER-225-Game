@@ -20,6 +20,7 @@ import Screens.PlayLevelScreen;
  * This class just starts up a GameWindow and attaches the ScreenCoordinator to the ScreenManager instance in the GameWindow
  * From this point on the ScreenCoordinator class will dictate what the game does
  */
+
 public class Game {
 
 	public static double vol = 0.5;

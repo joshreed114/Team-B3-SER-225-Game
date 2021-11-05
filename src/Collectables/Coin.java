@@ -6,13 +6,9 @@ import Level.Collectable;
 import Level.MapEntityStatus;
 import Level.Player;
 
-// Implements Coin ("coin.png" > Resources) entities (does so in the same way as the game implements Enemies and Power Ups)
+// Implements Coin ("CoinBronze.png" > Resources) entities (does so in the same way as the game implements Enemies and Power Ups)
 // This file is a modified Enemy.java replication
 // Interactions: Player.java, Camera.java, and Map.java
-// Most of the changes to Camera were copy-and-paste from existing methods with minor modifications
-
-// Note: When creating new instances of Coin ( & Supercoin, etc.), pass an Image Loader as the first argument
-// Note: Use CoinBronze.png for Coin, CoinSilver.png for Supercoin, CoinGold.png reserved for new coin type (not yet created)
 
 public class Coin extends Collectable {
 
@@ -20,12 +16,12 @@ public class Coin extends Collectable {
 
     public Coin(BufferedImage file, int x, int y)
     {
-        super(file, x, y, 0.3f);
+        super(file, x, y, 0.3f); // Coin subclasses do not need to pass a float argument for the scaling factor since 0.3f is hard-coded here
 
-        // Also, I put in 0.4 as the scaling ratio because it seemed to look most appropriate compared to the size of the player's avatar
+        // Also, I put in 0.3 as the scaling ratio because it seemed to look most appropriate compared to the size of the player's avatar
         // The scaling factor should probably be stored in a variable elsewhere instead of directly in the constructor,
             // But since it's the constructor (invoking explicitly in constructor is problematic),
-            // I didn't want to spend the time figuring out how to implement that yet
+            // I didn't want to spend the time figuring out how to implement that yet [not even sure if possible]
             
 	}
 

@@ -23,6 +23,7 @@ public abstract class Player extends GameObject {
 
     // store number of coins player has collected
     protected int numCoins = 0;
+    
     // values that affect player movement
     // these should be set in a subclass
     protected float walkSpeed = 0;
@@ -65,7 +66,6 @@ public abstract class Player extends GameObject {
     protected Stopwatch coolDownTimer = new Stopwatch();
 
     // if true, player cannot be hurt by enemies (good for testing)
-    //TODO: Where to set god mode
     protected boolean isInvincible = false;
 
     public Player(SpriteSheet spriteSheet, float x, float y, String startingAnimationName) {
