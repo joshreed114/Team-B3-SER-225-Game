@@ -60,39 +60,39 @@ public class LevelTwo extends Map {
         ArrayList<Collectable> collectables = new ArrayList<>();
 
         collectables.add(new Coin(
-                ImageLoader.load("coin.png"),
+                ImageLoader.load("CoinBronze.png"),
                 915,
                 630
         ));
 
         collectables.add(new Coin(
-                ImageLoader.load("coin.png"),
+                ImageLoader.load("CoinBronze.png"),
                 1644,
                 845
         ));
 
         collectables.add(new Coin(
-                ImageLoader.load("coin.png"),
+                ImageLoader.load("CoinBronze.png"),
                 2500,
                 400
         ));
 
         collectables.add(new Coin(
-                ImageLoader.load("coin.png"),
+                ImageLoader.load("CoinBronze.png"),
                 4473,
                 686
         ));
 
         collectables.add(new Coin(
-                ImageLoader.load("coin.png"),
+                ImageLoader.load("CoinBronze.png"),
                 5388,
-                1066
+                1064
         ));
 
         collectables.add(new Coin(
-                ImageLoader.load("coin.png"),
-                5436,
-                868
+                ImageLoader.load("CoinBronze.png"),
+                5434,
+                866
         ));
 
         return collectables;

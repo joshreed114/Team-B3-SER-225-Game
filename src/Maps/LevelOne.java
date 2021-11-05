@@ -14,7 +14,7 @@ import Utils.Point;
 
 import java.util.ArrayList;
 
-import Collectables.Coin;
+import Collectables.*;
 
 public class LevelOne extends Map {
 
@@ -45,19 +45,19 @@ public class LevelOne extends Map {
         ArrayList<Collectable> collectables = new ArrayList<>();
 
         collectables.add(new Coin(
-            ImageLoader.load("coin.png"),
+            ImageLoader.load("CoinBronze.png"),
             347,
             726
             ));
 
         collectables.add(new Coin(
-            ImageLoader.load("coin.png"),
+            ImageLoader.load("CoinBronze.png"),
             915,
             630
             ));
 
         collectables.add(new Coin(
-            ImageLoader.load("coin.png"),
+            ImageLoader.load("CoinBronze.png"),
             1020,
             503
             ));

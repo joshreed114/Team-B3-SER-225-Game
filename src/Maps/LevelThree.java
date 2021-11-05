@@ -66,25 +66,25 @@ public class LevelThree extends Map {
         ArrayList<Collectable> collectables = new ArrayList<>();
 
         collectables.add(new Coin(
-                ImageLoader.load("coin.png"),
+                ImageLoader.load("CoinBronze.png"),
                 2554,
                 1900
         ));
 
         collectables.add(new Coin(
-                ImageLoader.load("coin.png"),
+                ImageLoader.load("CoinBronze.png"),
                 3564,
                 2024
         ));
 
         collectables.add(new Coin(
-                ImageLoader.load("coin.png"),
+                ImageLoader.load("CoinBronze.png"),
                 2554,
                 924
         ));
 
         collectables.add(new Supercoin(
-                ImageLoader.load("supercoin.png"),
+                ImageLoader.load("CoinSilver.png"),
                 4328,
                 1500
         ));

@@ -6,14 +6,11 @@ import Level.Collectable;
 import Level.MapEntityStatus;
 import Level.Player;
 
-// Implements collectables (as opposed to PowerUps)
-// NOTE: Collectables interact with players while PowerUps are meant to interact with enemies
-
 public class SpeedBoost extends Collectable {
 
-    public SpeedBoost(BufferedImage file, int x, int y, float z)
+    public SpeedBoost(BufferedImage file, int x, int y)
     {
-        super(file, x, y, z); // Casting integer arguments to floats here helped me create new instances more easily during testing
+        super(file, x, y, 0.3f);
 	}
 
     @Override
@@ -26,8 +23,8 @@ public class SpeedBoost extends Collectable {
         if (intersects(player)) { touchedPlayer(player); }
     }
 
-    // A subclass can override this method to specify what it does when it touches the player
     public void touchedPlayer(Player player) {
+        player.setSpeed((float) (player.getSpeed() * 1.7));
         this.mapEntityStatus = MapEntityStatus.REMOVED;
     }
 

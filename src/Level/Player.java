@@ -379,6 +379,15 @@ public abstract class Player extends GameObject {
         }
     }
 
+    // Allows Invincibility.java to make player invincible
+    public void setInvincible(boolean value) { this.isInvincible = value; }
+
+    // Allows SpeedBoost.java to access how fast Player's current walk speed is
+    public float getSpeed() { return this.walkSpeed; }
+
+    // Allows SpeedBoost.java to make player speed increase
+    public void setSpeed(float value) { this.walkSpeed = value; }
+
     // other entities can call this method to hurt the player
     public void hurtPlayer(MapEntity mapEntity) {
         if (!isInvincible) {
