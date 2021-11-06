@@ -7,7 +7,7 @@ import java.awt.image.*;
 // When creating new instances of Collectable, pass an Image Loader as the first argument
 
 // Note: Use CoinBronze.png for Coin, CoinSilver.png for Supercoin, CoinGold.png reserved for new coin type (which is not yet created as of Collectable implementation)
-// TODO: Store the references to these image paths elsewhere, so that when creating instances the exact file name is not needed
+// TODO: Store the references to these image paths elsewhere, so that when creating instances the exact file name is not needed (good start might be taking a look at Config.java)
 
 public class Collectable extends MapEntity {
 

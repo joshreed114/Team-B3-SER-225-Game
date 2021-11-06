@@ -5,16 +5,15 @@ import java.awt.image.*;
 import Level.MapEntityStatus;
 import Level.Player;
 
-// Extends Coin.java to create new Supercoin (a Coin that is worth 5 instead of 1)
-// Resources > "CoinSilver.png"
-// Differs from Coin in that the graphic is just a red-colored version of the coin.png
-// Meant to be a coin type that is located in hard-to-reach places, which is why its value is higher than regular Coins
+// Extends Coin.java to create new Megacoin (a Coin that is worth 10 instead of 1)
+// Resources > "CoinGold.png"
+// Meant to be a coin type that is located in extremely hard-to-reach places, which is why its value is higher than Supercoin
 
-public class Supercoin extends Coin {
+public class Megacoin extends Coin {
 
-    private int value = 5;
+    private int value = 10;
 
-    public Supercoin(BufferedImage file, int x, int y) {
+    public Megacoin(BufferedImage file, int x, int y) {
         super(file, x, y);
 	}
 
