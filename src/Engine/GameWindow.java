@@ -49,6 +49,7 @@ public class GameWindow {
 		gameWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		//gameWindow.setVisible(true);
 	}
+	
 	public void update()
 	{
 

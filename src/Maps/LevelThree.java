@@ -14,6 +14,9 @@ import Utils.Point;
 
 import java.util.ArrayList;
 
+import Collectables.Coin;
+import Collectables.Supercoin;
+
 public class LevelThree extends Map {
 
         public LevelThree() {
@@ -59,34 +62,34 @@ public class LevelThree extends Map {
 
     // Add Coins to level
     @Override
-    public ArrayList<Coin> loadCoins() {
-        ArrayList<Coin> coins = new ArrayList<>();
+    public ArrayList<Collectable> loadCollectables() {
+        ArrayList<Collectable> collectables = new ArrayList<>();
 
-        coins.add(new Coin(
-                ImageLoader.load("coin.png"),
+        collectables.add(new Coin(
+                ImageLoader.load("CoinBronze.png"),
                 2554,
                 1900
         ));
 
-        coins.add(new Coin(
-                ImageLoader.load("coin.png"),
+        collectables.add(new Coin(
+                ImageLoader.load("CoinBronze.png"),
                 3564,
                 2024
         ));
 
-        coins.add(new Coin(
-                ImageLoader.load("coin.png"),
+        collectables.add(new Coin(
+                ImageLoader.load("CoinBronze.png"),
                 2554,
                 924
         ));
 
-        coins.add(new Supercoin(
-                ImageLoader.load("supercoin.png"),
+        collectables.add(new Supercoin(
+                ImageLoader.load("CoinSilver.png"),
                 4328,
                 1500
         ));
 
-        return coins;
+        return collectables;
     }
 
     @Override

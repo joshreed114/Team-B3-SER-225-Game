@@ -23,6 +23,7 @@ public abstract class Player extends GameObject {
 
     // store number of coins player has collected
     protected int numCoins = 0;
+    
     // values that affect player movement
     // these should be set in a subclass
     protected float walkSpeed = 0;
@@ -65,7 +66,6 @@ public abstract class Player extends GameObject {
     protected Stopwatch coolDownTimer = new Stopwatch();
 
     // if true, player cannot be hurt by enemies (good for testing)
-    //TODO: Where to set god mode
     protected boolean isInvincible = false;
 
     public Player(SpriteSheet spriteSheet, float x, float y, String startingAnimationName) {
@@ -378,6 +378,15 @@ public abstract class Player extends GameObject {
             }
         }
     }
+
+    // Allows Invincibility.java to make player invincible
+    public void setInvincible(boolean value) { this.isInvincible = value; }
+
+    // Allows SpeedBoost.java to access how fast Player's current walk speed is
+    public float getSpeed() { return this.walkSpeed; }
+
+    // Allows SpeedBoost.java to make player speed increase
+    public void setSpeed(float value) { this.walkSpeed = value; }
 
     // other entities can call this method to hurt the player
     public void hurtPlayer(MapEntity mapEntity) {

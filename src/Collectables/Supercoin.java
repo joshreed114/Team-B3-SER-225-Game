@@ -1,9 +1,12 @@
-package Level;
+package Collectables;
 
 import java.awt.image.*;
 
+import Level.MapEntityStatus;
+import Level.Player;
+
 // Extends Coin.java to create new Supercoin (a Coin that is worth 5 instead of 1)
-// Resources > "supercoin.png"
+// Resources > "CoinSilver.png"
 // Differs from Coin in that the graphic is just a red-colored version of the coin.png
 // Meant to be a coin type that is located in hard-to-reach places, which is why its value is higher than regular Coins
 

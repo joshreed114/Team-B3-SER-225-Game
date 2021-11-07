@@ -54,7 +54,7 @@ public abstract class Map {
     // lists to hold map entities that are a part of the map
     protected ArrayList<Enemy> enemies;
     protected ArrayList<PowerUp> powerUps;
-    protected ArrayList<Coin> coins; // Added this to store Coins in map
+    protected ArrayList<Collectable> collectables; // Added this to store Collectables in map
     protected ArrayList<EnhancedMapTile> enhancedMapTiles;
     protected ArrayList<NPC> npcs;
 
@@ -90,9 +90,9 @@ public abstract class Map {
             powerUp.setMap(this);
         }
 
-        this.coins = loadCoins();
-        for (Coin coin: this.coins) {
-            coin.setMap(this);
+        this.collectables = loadCollectables();
+        for (Collectable collectable: this.collectables) {
+            collectable.setMap(this);
         }
 
         this.enhancedMapTiles = loadEnhancedMapTiles();
@@ -282,7 +282,7 @@ public abstract class Map {
     }
 
     // list of coins defined to be a part of the map, should be overriden in a subclass
-    protected ArrayList<Coin> loadCoins() {
+    protected ArrayList<Collectable> loadCollectables() {
         return new ArrayList<>();
     }
 
@@ -304,7 +304,7 @@ public abstract class Map {
         return enemies;
     }
     public ArrayList<PowerUp> getPowerUps() {return powerUps;}
-    public ArrayList<Coin> getCoins() {return coins;}
+    public ArrayList<Collectable> getCollectables() {return collectables;}
     public ArrayList<EnhancedMapTile> getEnhancedMapTiles() {
         return enhancedMapTiles;
     }
@@ -327,8 +327,8 @@ public abstract class Map {
         return camera.getActiveNPCs();
     }
 
-    public ArrayList<Coin> getActiveCoins() {
-        return camera.getActiveCoins();
+    public ArrayList<Collectable> getActiveCollectables() {
+        return camera.getActiveCollectables();
     }
 
     // add an enemy to the map's list of enemies

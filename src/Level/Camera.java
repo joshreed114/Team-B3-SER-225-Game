@@ -25,7 +25,7 @@ public class Camera extends Rectangle {
     // current map entities that are to be included in this frame's update/draw cycle
     private ArrayList<Enemy> activeEnemies = new ArrayList<>();
     private ArrayList<PowerUp> activePowerUps = new ArrayList<>();
-    private ArrayList<Coin> activeCoins = new ArrayList<>();
+    private ArrayList<Collectable> activeCollectables = new ArrayList<>();
     private ArrayList<EnhancedMapTile> activeEnhancedMapTiles = new ArrayList<>();
     private ArrayList<NPC> activeNPCs = new ArrayList<>();
 
@@ -73,7 +73,7 @@ public class Camera extends Rectangle {
     public void updateMapEntities(Player player) {
         activeEnemies = loadActiveEnemies();
         activePowerUps = loadActivePowerUps();
-        activeCoins = loadActiveCoins();
+        activeCollectables = loadActiveCollectables();
         activeEnhancedMapTiles = loadActiveEnhancedMapTiles();
         activeNPCs = loadActiveNPCs();
 
@@ -94,8 +94,8 @@ public class Camera extends Rectangle {
              }
         }
 
-        for (Coin coin: activeCoins) {
-            coin.update(player);
+        for (Collectable collectable: activeCollectables) {
+            collectable.update(player);
         }
 
         for (EnhancedMapTile enhancedMapTile : activeEnhancedMapTiles) {
@@ -158,23 +158,23 @@ public class Camera extends Rectangle {
         return activePowerUps;
     }
 
-    private ArrayList<Coin> loadActiveCoins() {
-        ArrayList<Coin> activeCoins = new ArrayList<>();
-        for (int i = map.getCoins().size() - 1; i >= 0; i--) {
-            Coin coin = map.getCoins().get(i);
+    private ArrayList<Collectable> loadActiveCollectables() {
+        ArrayList<Collectable> activeCollectables = new ArrayList<>();
+        for (int i = map.getCollectables().size() - 1; i >= 0; i--) {
+            Collectable collectable = map.getCollectables().get(i);
 
-            if (isMapEntityActive(coin)) {
-                activeCoins.add(coin);
-                if (coin.mapEntityStatus == MapEntityStatus.INACTIVE) {
-                    coin.setMapEntityStatus(MapEntityStatus.ACTIVE);
+            if (isMapEntityActive(collectable)) {
+                activeCollectables.add(collectable);
+                if (collectable.mapEntityStatus == MapEntityStatus.INACTIVE) {
+                    collectable.setMapEntityStatus(MapEntityStatus.ACTIVE);
                 }
-            } else if (coin.getMapEntityStatus() == MapEntityStatus.ACTIVE) {
-                coin.setMapEntityStatus(MapEntityStatus.INACTIVE);
-            } else if (coin.getMapEntityStatus() == MapEntityStatus.REMOVED) {
-                map.getCoins().remove(i);
+            } else if (collectable.getMapEntityStatus() == MapEntityStatus.ACTIVE) {
+                collectable.setMapEntityStatus(MapEntityStatus.INACTIVE);
+            } else if (collectable.getMapEntityStatus() == MapEntityStatus.REMOVED) {
+                map.getCollectables().remove(i);
             }
         }
-        return activeCoins;
+        return activeCollectables;
     }
 
     // determine which enhanced map tiles are active (within range of the camera)
@@ -283,9 +283,9 @@ public class Camera extends Rectangle {
                 powerUp.draw(graphicsHandler);
             }
         }
-        for (Coin coin: activeCoins) {
-            if (containsDraw(coin)) {
-                coin.draw(graphicsHandler);
+        for (Collectable collectable: activeCollectables) {
+            if (containsDraw(collectable)) {
+                collectable.draw(graphicsHandler);
             }
         }
         for (NPC npc : activeNPCs) {
@@ -318,8 +318,8 @@ public class Camera extends Rectangle {
         return activeEnhancedMapTiles;
     }
 
-    public ArrayList<Coin> getActiveCoins() {
-        return activeCoins;
+    public ArrayList<Collectable> getActiveCollectables() {
+        return activeCollectables;
     }
 
     public ArrayList<NPC> getActiveNPCs() {

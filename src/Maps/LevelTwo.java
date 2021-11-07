@@ -18,6 +18,8 @@ import Utils.Point;
 
 import java.util.ArrayList;
 
+import Collectables.Coin;
+
 public class LevelTwo extends Map {
 
         
@@ -54,46 +56,46 @@ public class LevelTwo extends Map {
 
     // Add Coins to level
     @Override
-    public ArrayList<Coin> loadCoins() {
-        ArrayList<Coin> coins = new ArrayList<>();
+    public ArrayList<Collectable> loadCollectables() {
+        ArrayList<Collectable> collectables = new ArrayList<>();
 
-        coins.add(new Coin(
-                ImageLoader.load("coin.png"),
+        collectables.add(new Coin(
+                ImageLoader.load("CoinBronze.png"),
                 915,
                 630
         ));
 
-        coins.add(new Coin(
-                ImageLoader.load("coin.png"),
+        collectables.add(new Coin(
+                ImageLoader.load("CoinBronze.png"),
                 1644,
                 845
         ));
 
-        coins.add(new Coin(
-                ImageLoader.load("coin.png"),
+        collectables.add(new Coin(
+                ImageLoader.load("CoinBronze.png"),
                 2500,
                 400
         ));
 
-        coins.add(new Coin(
-                ImageLoader.load("coin.png"),
+        collectables.add(new Coin(
+                ImageLoader.load("CoinBronze.png"),
                 4473,
                 686
         ));
 
-        coins.add(new Coin(
-                ImageLoader.load("coin.png"),
+        collectables.add(new Coin(
+                ImageLoader.load("CoinBronze.png"),
                 5388,
-                1066
+                1064
         ));
 
-        coins.add(new Coin(
-                ImageLoader.load("coin.png"),
-                5436,
-                868
+        collectables.add(new Coin(
+                ImageLoader.load("CoinBronze.png"),
+                5434,
+                866
         ));
 
-        return coins;
+        return collectables;
     }
 
         @Override
