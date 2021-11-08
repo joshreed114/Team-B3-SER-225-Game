@@ -2,6 +2,7 @@ package Level;
 
 import java.applet.AudioClip;
 
+
 import java.io.File;
 import Game.Game;
 
@@ -59,5 +60,12 @@ public class MusicData {
 				setVol(1, clip);
 				break;
 		}
+	}
+	
+	
+	// added to stop initial music from playing / prevents overlapping loops
+	public static void setClipOff() {
+		
+		clip.stop();
 	}
 }
