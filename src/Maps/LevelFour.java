@@ -57,8 +57,8 @@ public class LevelFour extends Map {
         enemies.add(new Mouse(getPositionByTileIndex(66, 23), Direction.LEFT));
         enemies.add(new Mouse(getPositionByTileIndex(72, 23), Direction.LEFT));
 
-        // Fix Boss Mouse spawn position
-        enemies.add(new BossMouse(getPositionByTileIndex(109, 16), Direction.LEFT));
+        // Fix Boss Mouse spawn position (Old Boss Location)
+        //enemies.add(new BossMouse(getPositionByTileIndex(109, 16), Direction.LEFT));
 
         return enemies;
     }
@@ -85,20 +85,23 @@ public class LevelFour extends Map {
                 new Rectangle(0, 6,16,4),
                 Direction.RIGHT
         ));
-
+	    
+	//Adjusted end level box location for addition of boss level
         enhancedMapTiles.add(new EndLevelBox(
-                getPositionByTileIndex(129, 13)
+                getPositionByTileIndex(125, 11)
         ));
 
         return enhancedMapTiles;
     }
 
+    //Old location for the human NPC (Moved into new boss level)
+    /*
     @Override
     public ArrayList<NPC> loadNPCs() {
         ArrayList<NPC> npcs = new ArrayList<>();
-
         npcs.add(new Human(getPositionByTileIndex(125, 14), this));
-
         return npcs;
     }
+    */
+
 }
