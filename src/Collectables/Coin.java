@@ -1,6 +1,11 @@
 package Collectables;
 
 import java.awt.image.*;
+import java.io.File;
+
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.FloatControl;
 
 import Level.Collectable;
 import Level.MapEntityStatus;
@@ -12,6 +17,8 @@ import Level.Player;
 
 public class Coin extends Collectable {
 
+	public static float dB;
+	
     private int value = 1; // Incrementation value for numCoins in Player [value of this coin type]
 
     public Coin(BufferedImage file, int x, int y)
@@ -40,6 +47,27 @@ public class Coin extends Collectable {
     public void touchedPlayer(Player player) {
         player.addCoin(value); // Calls method in Player class to increment number of coins the player has collected
         this.mapEntityStatus = MapEntityStatus.REMOVED; // Stop drawing graphic (here: "coin.png") on-screen
+        File coinsound = new File("Resources/coinsound.wav");
+        PlaySound(coinsound,1);
+        
     }
 
+    public static void PlaySound(File Sound, double vol) {
+		try {
+			Clip clip = AudioSystem.getClip();
+			clip.open(AudioSystem.getAudioInputStream(Sound));
+			clip.getLevel();
+			setVol(vol, clip);
+			clip.start();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+
+	public static void setVol(double vol, Clip clip) {
+		FloatControl gain = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
+		dB = (float) (Math.log(vol) / (Math.log(10)) * 20);
+		gain.setValue(dB);
+	}
 }

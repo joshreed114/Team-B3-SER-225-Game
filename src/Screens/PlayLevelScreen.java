@@ -18,6 +18,7 @@ import Screens.RebuildScreen;
 
 import java.awt.*;
 import java.awt.dnd.DragGestureEvent;
+import java.io.File;
 
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
@@ -41,6 +42,7 @@ public class PlayLevelScreen extends Screen implements PlayerListener {
 	private Config config;
 	protected int currentLevel = 0;
 	private MusicData mD;
+	public static float dB;
 
 	// private int x_screensize = 0;
 	// private int y_screensize = 0;
@@ -221,6 +223,8 @@ public class PlayLevelScreen extends Screen implements PlayerListener {
 				screenTimer.setWaitTime(2500);
 				playLevelScreenState = PlayLevelScreenState.LEVEL_WIN_MESSAGE;
 				currentLevel++;
+				File win = new File("Resources/finishedlevel.wav");
+				PlaySound(win,1);
 				break;
 			// if level cleared screen is up and the timer is up for how long it should stay
 			// out, go back to main menu
@@ -667,4 +671,22 @@ public class PlayLevelScreen extends Screen implements PlayerListener {
 	private enum PlayLevelScreenState {
 		RUNNING, LEVEL_COMPLETED, PLAYER_DEAD, LEVEL_WIN_MESSAGE, LEVEL_LOSE_MESSAGE,
 	}
+	public static void PlaySound(File Sound, double vol) {
+		try {
+			Clip clip = AudioSystem.getClip();
+			clip.open(AudioSystem.getAudioInputStream(Sound));
+			clip.getLevel();
+			setVol(vol, clip);
+			clip.start();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static void setVol(double vol, Clip clip) {
+		FloatControl gain = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
+		dB = (float) (Math.log(vol) / (Math.log(10)) * 20);
+		gain.setValue(dB);
+	}
+
 }

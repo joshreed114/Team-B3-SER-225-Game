@@ -11,7 +11,12 @@ import Utils.AirGroundState;
 import Utils.Direction;
 import Utils.Point;
 
+import java.io.File;
 import java.util.HashMap;
+
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.FloatControl;
 
 // This class is for the black bug enemy
 // enemy behaves like a Mario goomba -- walks forward until it hits a solid map tile, and then turns around
@@ -23,6 +28,7 @@ public class BugEnemy extends Enemy {
     private Direction startFacingDirection;
     private Direction facingDirection;
     private AirGroundState airGroundState;
+    public static float dB;
 
     public BugEnemy(Point location, Direction facingDirection) {
         super(location.x, location.y, new SpriteSheet(ImageLoader.load("BugEnemy.png"), 24, 15), "WALK_LEFT");
@@ -101,6 +107,8 @@ public class BugEnemy extends Enemy {
         //New comparison due to low height of bug enemy
         if(player.getY() + 35 < this.getY()) {
             this.hurtEnemy(this);
+			File killenemy = new File("Resources/enemydeath.wav");
+			PlaySound(killenemy,1);
         }
         //Otherwise, hurt the player
         else {
@@ -136,4 +144,22 @@ public class BugEnemy extends Enemy {
             });
         }};
     }
+    public static void PlaySound(File Sound, double vol) {
+		try {
+			Clip clip = AudioSystem.getClip();
+			clip.open(AudioSystem.getAudioInputStream(Sound));
+			clip.getLevel();
+			setVol(vol, clip);
+			clip.start();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static void setVol(double vol, Clip clip) {
+		FloatControl gain = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
+		dB = (float) (Math.log(vol) / (Math.log(10)) * 20);
+		gain.setValue(dB);
+	}
+
 }
