@@ -2,7 +2,6 @@ package Level;
 
 import java.applet.AudioClip;
 
-
 import java.io.File;
 import Game.Game;
 
@@ -22,50 +21,45 @@ public class MusicData {
 	public static float dB;
 	public static Clip clip;
 	public static Game game;
-	public static synchronized void playMusic(String musicLocation, double vol)
-	{
-		try
-		{
+
+	public static synchronized void playMusic(String musicLocation, double vol) {
+		try {
 			File musicPath = new File(musicLocation);
 			AudioInputStream audioInput = AudioSystem.getAudioInputStream(musicPath);
 			clip = AudioSystem.getClip();
 			clip.open(audioInput);
 			clip.getLevel();
-			setVol(vol,clip);
+			setVol(vol, clip);
 			clip.start();
 			clip.loop(Clip.LOOP_CONTINUOUSLY);
-		}
-		catch(Exception ex)
-		{
+		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
 	}
-	public static void setVol(double vol, Clip clip)
-	{
-		FloatControl gain = (FloatControl)clip.getControl(FloatControl.Type.MASTER_GAIN);
-		dB = (float)(Math.log(vol)/(Math.log(10)) * 20);
+
+	public static void setVol(double vol, Clip clip) {
+		FloatControl gain = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
+		dB = (float) (Math.log(vol) / (Math.log(10)) * 20);
 		gain.setValue(dB);
 	}
-	public static void setVolCall(String volLevel)
-	{
-		switch (volLevel)
-		{
-			case "Off": ///////// added off that sets volume to zero
-				setVol(0.0, clip);
-				break;
-			case "Low":
-				setVol(0.25, clip);
-				break;
-			case "Full":
-				setVol(1, clip);
-				break;
+
+	public static void setVolCall(String volLevel) {
+		switch (volLevel) {
+		case "Off": ///////// added off that sets volume to zero
+			setVol(0.0, clip);
+			break;
+		case "Low":
+			setVol(0.25, clip);
+			break;
+		case "Full":
+			setVol(1, clip);
+			break;
 		}
 	}
-	
-	
+
 	// added to stop initial music from playing / prevents overlapping loops
 	public static void setClipOff() {
-		
+
 		clip.stop();
 	}
 }

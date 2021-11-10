@@ -18,6 +18,7 @@ import Screens.RebuildScreen;
 
 import java.awt.*;
 import java.awt.dnd.DragGestureEvent;
+import java.io.File;
 
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
@@ -40,6 +41,7 @@ public class PlayLevelScreen extends Screen implements PlayerListener {
 	private Config config;
 	protected int currentLevel = 0;
 	private MusicData mD;
+	public static float dB;
 
 	// private int x_screensize = 0;
 	// private int y_screensize = 0;
@@ -218,6 +220,8 @@ public class PlayLevelScreen extends Screen implements PlayerListener {
 				screenTimer.setWaitTime(2500);
 				playLevelScreenState = PlayLevelScreenState.LEVEL_WIN_MESSAGE;
 				currentLevel++;
+				File win = new File("Resources/finishedlevel.wav");
+				PlaySound(win,1);
 				break;
 			// if level cleared screen is up and the timer is up for how long it should stay
 			// out, go back to main menu
@@ -286,7 +290,7 @@ public class PlayLevelScreen extends Screen implements PlayerListener {
 				settingsMenuItemSelected = 0;
 			} else if (settingsMenuItemSelected < 0) {
 				settingsMenuItemSelected = 2;
-			} 
+			}
 			if (currentSettingLevelHovered > 2) {
 				currentSettingLevelHovered = 0;
 			} else if (currentSettingLevelHovered < 0) {
@@ -353,7 +357,7 @@ public class PlayLevelScreen extends Screen implements PlayerListener {
 				dragonBallZ.setColor(new Color(49, 207, 240));
 				classic.setColor(new Color(49, 207, 240));
 				Techno.setColor(new Color(49, 207, 240));
-				
+
 				aspectActive = true;
 				if (currentSettingLevelHovered == 0) {
 					smallScreen.setColor(new Color(255, 215, 0));
@@ -386,7 +390,6 @@ public class PlayLevelScreen extends Screen implements PlayerListener {
 				smallScreen.setColor(new Color(49, 207, 240));
 				mediumScreen.setColor(new Color(49, 207, 240));
 				bigScreen.setColor(new Color(49, 207, 240));
-				
 
 				if (currentSettingLevelHovered == 0) {
 					dragonBallZ.setColor(new Color(255, 215, 0));
@@ -622,19 +625,19 @@ public class PlayLevelScreen extends Screen implements PlayerListener {
 		musicObject.playMusic(filePath, vol);
 
 	}
-	
+
 	public static void playTheClasic() {
-		
+
 		String filePath = "Resources/OffLimits.wav";
 		MusicData musicObject = new MusicData();
 		musicObject.playMusic(filePath, vol);
 	}
-	
+
 	public static void playTheTechno() {
 		String filePath = "Resources/PimPoy.wav";
 		MusicData musicObject = new MusicData();
 		musicObject.playMusic(filePath, vol);
-		
+
 	}
 
 	@Override
@@ -659,4 +662,23 @@ public class PlayLevelScreen extends Screen implements PlayerListener {
 	private enum PlayLevelScreenState {
 		RUNNING, LEVEL_COMPLETED, PLAYER_DEAD, LEVEL_WIN_MESSAGE, LEVEL_LOSE_MESSAGE,
 	}
+
+	public static void PlaySound(File Sound, double vol) {
+		try {
+			Clip clip = AudioSystem.getClip();
+			clip.open(AudioSystem.getAudioInputStream(Sound));
+			clip.getLevel();
+			setVol(vol, clip);
+			clip.start();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static void setVol(double vol, Clip clip) {
+		FloatControl gain = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
+		dB = (float) (Math.log(vol) / (Math.log(10)) * 20);
+		gain.setValue(dB);
+	}
+
 }
