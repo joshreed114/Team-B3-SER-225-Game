@@ -33,6 +33,7 @@ public class PlayLevelScreen extends Screen implements PlayerListener {
 	protected Player player;
 	protected PlayLevelScreenState playLevelScreenState;
 	protected Stopwatch screenTimer = new Stopwatch();
+	protected SpriteFont coinLabel;
 	protected LevelClearedScreen levelClearedScreen;
 	protected LevelLoseScreen levelLoseScreen;
 	private GameWindow gameWindow;
@@ -184,6 +185,7 @@ public class PlayLevelScreen extends Screen implements PlayerListener {
 		if (currentLevel > 0) {
 			player.unlockPowerUpOne();
 		}
+
 		this.player.setMap(map);
 		this.player.addListener(this);
 		this.player.setLocation(map.getPlayerStartPosition().x, map.getPlayerStartPosition().y);
@@ -205,7 +207,7 @@ public class PlayLevelScreen extends Screen implements PlayerListener {
 		if (!isGamePaused) {
 			// based on screen state, perform specific actions
 			switch (playLevelScreenState) {
-			// if level is "running" update player and map to keep game logic for the
+			// if level is "running" update player, map and interface/overlay screen to keep game logic for the
 			// platformer level going
 			case RUNNING:
 				player.update();
@@ -213,7 +215,8 @@ public class PlayLevelScreen extends Screen implements PlayerListener {
 				break;
 			// if level has been completed, bring up level cleared screen
 			case LEVEL_COMPLETED:
-				levelClearedScreen = new LevelClearedScreen();
+				//Passes player to cleared level so the new screen can access the player's collected coins
+				levelClearedScreen = new LevelClearedScreen(player);
 				levelClearedScreen.initialize();
 				screenTimer.setWaitTime(2500);
 				playLevelScreenState = PlayLevelScreenState.LEVEL_WIN_MESSAGE;
@@ -235,7 +238,7 @@ public class PlayLevelScreen extends Screen implements PlayerListener {
 				break;
 			// if player died in level, bring up level lost screen
 			case PLAYER_DEAD:
-				levelLoseScreen = new LevelLoseScreen(this);
+				levelLoseScreen = new LevelLoseScreen(this, player);
 				levelLoseScreen.initialize();
 				playLevelScreenState = PlayLevelScreenState.LEVEL_LOSE_MESSAGE;
 				break;
@@ -488,6 +491,11 @@ public class PlayLevelScreen extends Screen implements PlayerListener {
 		case PLAYER_DEAD:
 			map.draw(graphicsHandler);
 			player.draw(graphicsHandler);
+			//draws coin label to display coins collected during the level
+			coinLabel = new SpriteFont("Coins: " + player.getCoins(), 675, 40, "Comic Sans", 22, Color.yellow);
+			coinLabel.setOutlineColor(Color.black);
+			 coinLabel.setOutlineThickness(1.5f);
+			coinLabel.draw(graphicsHandler);
 			break;
 		case LEVEL_WIN_MESSAGE:
 			levelClearedScreen.draw(graphicsHandler);
