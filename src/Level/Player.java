@@ -23,6 +23,8 @@ public abstract class Player extends GameObject {
 
     // store number of coins player has collected
     protected int numCoins = 0;
+    //stores previous coin number (previous level or previous life)
+    protected int prevCoins;
     
     // values that affect player movement
     // these should be set in a subclass
@@ -78,6 +80,23 @@ public abstract class Player extends GameObject {
         powerState = PowerState.SAFE;
         previousPowerState = powerState;
         levelState = LevelState.RUNNING;
+
+        File jumpSound = new File("Jump.wav");
+        File walkSound = new File("Walking on concrete sound effect YouTube.wav");
+    }
+
+    //new constructor if the player is being created with an already existing coin value
+    public Player(SpriteSheet spriteSheet, float x, float y, String startingAnimationName, int coins) {
+        super(spriteSheet, x, y, startingAnimationName);
+        facingDirection = Direction.RIGHT;
+        airGroundState = AirGroundState.AIR;
+        previousAirGroundState = airGroundState;
+        playerState = PlayerState.STANDING;
+        previousPlayerState = playerState;
+        powerState = PowerState.SAFE;
+        previousPowerState = powerState;
+        levelState = LevelState.RUNNING;
+        prevCoins = coins;
 
         File jumpSound = new File("Jump.wav");
         File walkSound = new File("Walking on concrete sound effect YouTube.wav");

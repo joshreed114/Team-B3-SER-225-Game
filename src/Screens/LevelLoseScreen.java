@@ -9,14 +9,17 @@ import java.awt.*;
 public class LevelLoseScreen extends Screen {
     private SpriteFont loseMessage;
     private SpriteFont instructions;
+    private SpriteFont coinMessage;
     protected KeyLocker keyLocker = new KeyLocker();
     protected PlayLevelScreen playLevelScreen;
+    protected Level.Player player;
     private Config config;
     private PlayLevelScreen playlevel;
     private int x, y = 0;
 
-    public LevelLoseScreen(PlayLevelScreen playLevelScreen) {
+    public LevelLoseScreen(PlayLevelScreen playLevelScreen, Level.Player player) {
         this.playLevelScreen = playLevelScreen;
+        this.player = player;
     }
 
 
@@ -24,6 +27,7 @@ public class LevelLoseScreen extends Screen {
     public void initialize() {							// changed coordinates to take config and subtract
         loseMessage = new SpriteFont("You lose!", config.WIDTHS - 465, config.HEIGHTS - 350, "Comic Sans", 30, Color.white);
         instructions = new SpriteFont("Press Space to try again or Escape to go back to the main menu", config.WIDTHS - 710, config.HEIGHTS - 300,"Comic Sans", 20, Color.white);
+        coinMessage = new SpriteFont("Coins Lost: " + player.getCoins(), config.WIDTHS - 465, config.HEIGHTS - 250, "Comic Sans", 20, Color.yellow);
         keyLocker.lockKey(Key.SPACE);
         keyLocker.lockKey(Key.ESC);
 
@@ -52,5 +56,6 @@ public class LevelLoseScreen extends Screen {
         graphicsHandler.drawFilledRectangle(0, 0, config.WIDTH, config.HEIGHT, Color.black);
         loseMessage.draw(graphicsHandler);		// changed coordinates to take config
         instructions.draw(graphicsHandler);
+        coinMessage.draw(graphicsHandler);
     }
 }

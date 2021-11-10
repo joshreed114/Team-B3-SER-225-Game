@@ -3,12 +3,141 @@
   <component name="ChangeListManager">
     <list default="true" id="ced22ea9-e13a-452d-ac7a-9b7eb379aaab" name="Changes" comment="Bugfix push test (IntelliJ)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Builders/FrameBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Builders/FrameBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Builders/GameObjectBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Builders/GameObjectBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Builders/MapEntityBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Builders/MapEntityBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Builders/MapTileBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Builders/MapTileBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Enemies/BossMouse$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Enemies/BossMouse$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Enemies/BossMouse.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Enemies/BossMouse.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Enemies/BugEnemy$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Enemies/BugEnemy$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Enemies/BugEnemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Enemies/BugEnemy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Enemies/Cheese$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Enemies/Cheese$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Enemies/Cheese.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Enemies/Cheese.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Enemies/DinosaurEnemy$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Enemies/DinosaurEnemy$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Enemies/DinosaurEnemy$DinosaurState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Enemies/DinosaurEnemy$DinosaurState.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Enemies/DinosaurEnemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Enemies/DinosaurEnemy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Enemies/Fireball$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Enemies/Fireball$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Enemies/Fireball.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Enemies/Fireball.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Enemies/LawnMowerOfDeath$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Enemies/LawnMowerOfDeath$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Enemies/LawnMowerOfDeath.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Enemies/LawnMowerOfDeath.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Enemies/Mouse$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Enemies/Mouse$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Enemies/Mouse.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Enemies/Mouse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Engine/Config.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Engine/Config.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Engine/DefaultScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Engine/DefaultScreen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Engine/GamePanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Engine/GamePanel$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Engine/GamePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Engine/GamePanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Engine/GameWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Engine/GameWindow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Engine/GraphicsHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Engine/GraphicsHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Engine/ImageLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Engine/ImageLoader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Engine/Key.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Engine/Key.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Engine/KeyLocker.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Engine/KeyLocker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Engine/Keyboard$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Engine/Keyboard$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Engine/Keyboard$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Engine/Keyboard$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Engine/Keyboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Engine/Keyboard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Engine/Screen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Engine/Screen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Engine/ScreenManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Engine/ScreenManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/EnhancedMapTiles/EndLevelBox$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/EnhancedMapTiles/EndLevelBox$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/EnhancedMapTiles/EndLevelBox.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/EnhancedMapTiles/EndLevelBox.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/EnhancedMapTiles/HorizontalMovingPlatform.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/EnhancedMapTiles/HorizontalMovingPlatform.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Game/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Game/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Game/GameState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Game/GameState.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Game/ScreenCoordinator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Game/ScreenCoordinator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/GameObject/AnimatedSprite.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/GameObject/AnimatedSprite.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/GameObject/Frame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/GameObject/Frame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/GameObject/GameObject$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/GameObject/GameObject$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/GameObject/GameObject$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/GameObject/GameObject$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/GameObject/GameObject$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/GameObject/GameObject$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/GameObject/GameObject$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/GameObject/GameObject$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/GameObject/GameObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/GameObject/GameObject.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/GameObject/ImageEffect.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/GameObject/ImageEffect.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/GameObject/IntersectableRectangle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/GameObject/IntersectableRectangle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/GameObject/Rectangle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/GameObject/Rectangle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/GameObject/Sprite.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/GameObject/Sprite.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/GameObject/SpriteSheet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/GameObject/SpriteSheet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Level/Camera.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Level/Camera.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Level/Coin.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Level/Enemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Level/Enemy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Level/EnhancedMapTile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Level/EnhancedMapTile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Level/LevelState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Level/LevelState.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Level/Map.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Level/Map.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Level/MapEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Level/MapEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Level/MapEntityStatus.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Level/MapEntityStatus.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Level/MapTile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Level/MapTile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Level/MapTileCollisionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Level/MapTileCollisionHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Level/MusicData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Level/MusicData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Level/NPC.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Level/NPC.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Level/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Level/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Level/PlayerListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Level/PlayerListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Level/PlayerState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Level/PlayerState.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Level/PowerUp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Level/PowerUp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Level/Supercoin.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Level/TileType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Level/TileType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Level/Tileset.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Level/Tileset.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/MapEditor/ChangeMapSizeWindow$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/MapEditor/ChangeMapSizeWindow$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/MapEditor/ChangeMapSizeWindow$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/MapEditor/ChangeMapSizeWindow$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/MapEditor/ChangeMapSizeWindow$MapHeightDirection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/MapEditor/ChangeMapSizeWindow$MapHeightDirection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/MapEditor/ChangeMapSizeWindow$MapWidthDirection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/MapEditor/ChangeMapSizeWindow$MapWidthDirection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/MapEditor/ChangeMapSizeWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/MapEditor/ChangeMapSizeWindow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/MapEditor/EditorControlPanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/MapEditor/EditorControlPanel$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/MapEditor/EditorControlPanel$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/MapEditor/EditorControlPanel$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/MapEditor/EditorControlPanel$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/MapEditor/EditorControlPanel$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/MapEditor/EditorControlPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/MapEditor/EditorControlPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/MapEditor/EditorMainPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/MapEditor/EditorMainPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/MapEditor/EditorMaps$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/MapEditor/EditorMaps$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/MapEditor/EditorMaps.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/MapEditor/EditorMaps.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/MapEditor/EditorWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/MapEditor/EditorWindow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/MapEditor/MapBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/MapEditor/MapBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/MapEditor/MapEditor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/MapEditor/MapEditor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/MapEditor/SelectedTileIndexHolder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/MapEditor/SelectedTileIndexHolder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/MapEditor/TileBuilder$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/MapEditor/TileBuilder$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/MapEditor/TileBuilder$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/MapEditor/TileBuilder$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/MapEditor/TileBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/MapEditor/TileBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/MapEditor/TilePicker$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/MapEditor/TilePicker$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/MapEditor/TilePicker$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/MapEditor/TilePicker$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/MapEditor/TilePicker.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/MapEditor/TilePicker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Maps/BossLevel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Maps/BossLevel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Maps/LevelFour.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Maps/LevelFour.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Engine/GameWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Engine/GameWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Level/MusicData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Level/MusicData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Maps/LevelOne.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Maps/LevelOne.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Maps/LevelThree.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Maps/LevelThree.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Maps/LevelTwo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Maps/LevelTwo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Maps/TitleScreenMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Maps/TitleScreenMap.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/NPCs/Crab$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/NPCs/Crab$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/NPCs/Crab.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/NPCs/Crab.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/NPCs/DashingDuck$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/NPCs/DashingDuck$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/NPCs/DashingDuck.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/NPCs/DashingDuck.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/NPCs/Human$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/NPCs/Human$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/NPCs/Human.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/NPCs/Human.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/NPCs/Walrus$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/NPCs/Walrus$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/NPCs/Walrus.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/NPCs/Walrus.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Players/Cat$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Players/Cat$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Players/Cat.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Players/Cat.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Players/Hairball$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Players/Hairball$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Players/Hairball.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Players/Hairball.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Screens/CreditsScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Screens/CreditsScreen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Screens/InstructionScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Screens/InstructionScreen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Screens/IntroductionScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Screens/IntroductionScreen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Screens/LevelClearedScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Screens/LevelClearedScreen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Screens/LevelLoseScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Screens/LevelLoseScreen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Screens/MenuScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Screens/MenuScreen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Screens/PlayLevelScreen$PlayLevelScreenState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Screens/PlayLevelScreen$PlayLevelScreenState.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Screens/PlayLevelScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Screens/PlayLevelScreen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Screens/RebuildScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Screens/RebuildScreen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/SpriteFont/SpriteFont.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/SpriteFont/SpriteFont.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Tilesets/CommonTileset.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Tilesets/CommonTileset.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Tilesets/LevelTwoTileset.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Tilesets/LevelTwoTileset.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Tilesets/MasterMapTileset.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Tilesets/MasterMapTileset.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Utils/AirGroundState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Utils/AirGroundState.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Utils/Colors.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Utils/Colors.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Utils/Direction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Utils/Direction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Utils/ImageUtils$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Utils/ImageUtils$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Utils/ImageUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Utils/ImageUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Utils/MathUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Utils/MathUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Utils/Point.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Utils/Point.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Utils/PowerState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Utils/PowerState.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Utils/Stopwatch.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Utils/Stopwatch.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Level/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Level/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Maps/LevelFour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Maps/LevelFour.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Screens/LevelClearedScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Screens/LevelClearedScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Screens/LevelLoseScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Screens/LevelLoseScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Screens/PlayLevelScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Screens/PlayLevelScreen.java" afterDir="false" />
@@ -17,6 +146,13 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">

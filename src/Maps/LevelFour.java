@@ -88,7 +88,7 @@ public class LevelFour extends Map {
 	    
 	//Adjusted end level box location for addition of boss level
         enhancedMapTiles.add(new EndLevelBox(
-                getPositionByTileIndex(125, 11)
+                getPositionByTileIndex(125, 15)
         ));
 
         return enhancedMapTiles;
