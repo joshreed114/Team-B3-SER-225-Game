@@ -461,6 +461,9 @@ public abstract class Player extends GameObject {
             } else {
                 currentAnimationName = "DEATH_LEFT";
             }
+            
+            File death = new File("Resources/DeathsoundMinecraft.wav");
+			PlaySound(death, 1);
             super.update();
         }
         // if death animation not on last frame yet, continue to play out death animation
