@@ -496,7 +496,7 @@ public class PlayLevelScreen extends Screen implements PlayerListener {
 			map.draw(graphicsHandler);
 			player.draw(graphicsHandler);
 			//draws coin label to display coins collected during the level
-			coinLabel = new SpriteFont("Coins: " + player.getCoins(), 675, 40, "Comic Sans", 22, Color.yellow);
+			coinLabel = new SpriteFont("Coins: " + player.getCoins(), config.WIDTH - 125, 40, "Comic Sans", 22, Color.yellow);
 			coinLabel.setOutlineColor(Color.black);
 			 coinLabel.setOutlineThickness(1.5f);
 			coinLabel.draw(graphicsHandler);
