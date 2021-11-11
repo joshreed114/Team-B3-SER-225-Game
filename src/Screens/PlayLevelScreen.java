@@ -8,6 +8,7 @@ import Level.*;
 import Maps.LevelFour;
 import Maps.LevelThree;
 import Maps.LevelTwo;
+import Maps.NewBossLevel;
 import Maps.LevelOne;
 import Players.Cat;
 import SpriteFont.SpriteFont;
@@ -180,6 +181,10 @@ public class PlayLevelScreen extends Screen implements PlayerListener {
 			this.map = new LevelFour();
 			map.reset();
 			break;
+		case 4:
+			this.map = new NewBossLevel();
+			map.reset();
+			break;
 		}
 
 		// setup player
@@ -232,7 +237,7 @@ public class PlayLevelScreen extends Screen implements PlayerListener {
 				if (screenTimer.isTimeUp()) {
 					levelClearedScreen = null;
 					// TODO: Update this if another level is added
-					if (currentLevel > 3) {
+					if (currentLevel > 4) {
 						goBackToMenu();
 					} else {
 						playLevelScreenState = PlayLevelScreenState.RUNNING;
@@ -496,7 +501,7 @@ public class PlayLevelScreen extends Screen implements PlayerListener {
 			map.draw(graphicsHandler);
 			player.draw(graphicsHandler);
 			//draws coin label to display coins collected during the level
-			coinLabel = new SpriteFont("Coins: " + player.getCoins(), config.WIDTH - 125, 40, "Comic Sans", 22, Color.yellow);
+			coinLabel = new SpriteFont("Coins: " + player.getCoins(), 675, 40, "Comic Sans", 22, Color.yellow);
 			coinLabel.setOutlineColor(Color.black);
 			 coinLabel.setOutlineThickness(1.5f);
 			coinLabel.draw(graphicsHandler);

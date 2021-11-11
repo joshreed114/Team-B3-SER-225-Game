@@ -19,7 +19,7 @@ import Collectables.*;
 public class LevelOne extends Map {
 
     public LevelOne() {
-        super("test_map.txt", new CommonTileset(), new Point(1, 11));
+        super("test_map.txt", new CommonTileset(), new Point(1, 15));
     }
 
     // TESTING

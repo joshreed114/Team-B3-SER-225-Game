@@ -1,5 +1,6 @@
 package Maps;
 
+import Enemies.BossMouse;
 import Enemies.BugEnemy;
 import Enemies.DinosaurEnemy;
 import Enemies.LawnMowerOfDeath;
@@ -21,7 +22,7 @@ import java.util.ArrayList;
 
 public class NewBossLevel extends Map {
     public NewBossLevel() {
-        super("boss_Level2.txt", new LevelTwoTileset(), new Point(1, 11));
+        super("boss_Level2.txt", new LevelTwoTileset(), new Point(6, 14));
     }
     @Override
     public ArrayList<EnhancedMapTile> loadEnhancedMapTiles() {
@@ -33,7 +34,7 @@ public class NewBossLevel extends Map {
                 getPositionByTileIndex(36, 29),
                 TileType.JUMP_THROUGH_PLATFORM,
                 3,
-                new Rectangle(34, 29,16,4),
+                new Rectangle(34, 29,24,8),
                 Direction.RIGHT
         ));
 
@@ -43,7 +44,7 @@ public class NewBossLevel extends Map {
                 getPositionByTileIndex(49, 29),
                 TileType.JUMP_THROUGH_PLATFORM,
                 3,
-                new Rectangle(47, 29,16,4),
+                new Rectangle(47, 29,24,8),
                 Direction.RIGHT
         ));
 
@@ -53,7 +54,7 @@ public class NewBossLevel extends Map {
                 getPositionByTileIndex(40, 29),
                 TileType.JUMP_THROUGH_PLATFORM,
                 3,
-                new Rectangle(38, 29,16,4),
+                new Rectangle(38, 29,24,8),
                 Direction.RIGHT
         ));
 
@@ -63,7 +64,7 @@ public class NewBossLevel extends Map {
                 getPositionByTileIndex(45, 29),
                 TileType.JUMP_THROUGH_PLATFORM,
                 3,
-                new Rectangle(43, 29,16,4),
+                new Rectangle(43, 29,24,8),
                 Direction.RIGHT
         ));
 
@@ -78,14 +79,16 @@ public class NewBossLevel extends Map {
     public ArrayList<Enemy> loadEnemies() {
         ArrayList<Enemy> enemies = new ArrayList<>();
 
-        enemies.add(new BugEnemy(getPositionByTileIndex(26, 22), Direction.LEFT));
+        enemies.add(new BugEnemy(getPositionByTileIndex(26, 30), Direction.LEFT));
         enemies.add(new BugEnemy(getPositionByTileIndex(55, 32), Direction.LEFT));
-        enemies.add(new BugEnemy(getPositionByTileIndex(58, 34), Direction.LEFT));
+        enemies.add(new BugEnemy(getPositionByTileIndex(65, 40), Direction.LEFT));
 
-        enemies.add(new DinosaurEnemy(getPositionByTileIndex(67, 39).addY(2), getPositionByTileIndex(72, 12).addY(2), Direction.RIGHT));
-        enemies.add(new DinosaurEnemy(getPositionByTileIndex(79, 40).addY(2), getPositionByTileIndex(84, 15).addY(2), Direction.RIGHT));
-        enemies.add(new DinosaurEnemy(getPositionByTileIndex(82, 40).addY(2), getPositionByTileIndex(87, 18).addY(2), Direction.LEFT));
-        enemies.add(new DinosaurEnemy(getPositionByTileIndex(92, 38).addY(2), getPositionByTileIndex(122, 11).addY(2), Direction.LEFT));
+        enemies.add(new DinosaurEnemy(getPositionByTileIndex(66, 39).addY(2), getPositionByTileIndex(69, 12).addY(2), Direction.RIGHT));
+        enemies.add(new DinosaurEnemy(getPositionByTileIndex(78, 40).addY(2), getPositionByTileIndex(84, 15).addY(2), Direction.RIGHT));
+        enemies.add(new DinosaurEnemy(getPositionByTileIndex(87, 40).addY(2), getPositionByTileIndex(91, 18).addY(2), Direction.LEFT));
+        
+        enemies.add(new BossMouse(getPositionByTileIndex(81, 37), Direction.LEFT));
+		
         return enemies;
     }
 }

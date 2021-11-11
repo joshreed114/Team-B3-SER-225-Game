@@ -20,7 +20,7 @@ import Collectables.Supercoin;
 public class LevelThree extends Map {
 
         public LevelThree() {
-                super("level_three.txt", new MasterMapTileset(), new Point(1, 44));
+                super("level_three.txt", new MasterMapTileset(), new Point(3, 44));
         }
 
         // TESTING

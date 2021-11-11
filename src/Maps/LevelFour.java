@@ -23,7 +23,7 @@ public class LevelFour extends Map {
 	
 	// Pass "level_four2.txt" parameter -- contains adjusted map elements
 	// Also, move player start position to beginning of level
-	public LevelFour() { super("level_four2.txt", new MasterMapTileset(), new Point(1,17)); }
+	public LevelFour() { super("level_four2.txt", new MasterMapTileset(), new Point(1,18)); }
 
     @Override
     public ArrayList<Enemy> loadEnemies() {
