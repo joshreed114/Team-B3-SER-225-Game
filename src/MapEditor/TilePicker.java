@@ -28,7 +28,7 @@ public class TilePicker extends JPanel {
         setBackground(Colors.MAGENTA);
         setLocation(0, 0);
         //TODO: MAPEDITOR WINDOW SIZE: change this
-        setPreferredSize(new Dimension(187, 1000));
+        setPreferredSize(new Dimension(187, 480));
         setBorder(BorderFactory.createLineBorder(Color.black, 2));
         setLayout(null);
         this.selectedTileIndexHolder = selectedTileIndexHolder;
