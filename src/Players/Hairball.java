@@ -12,6 +12,7 @@ import Utils.Direction;
 import Utils.Point;
 import Utils.Stopwatch;
 
+import java.io.File;
 import java.util.HashMap;
 
 public class Hairball extends PowerUp {
@@ -66,6 +67,8 @@ public class Hairball extends PowerUp {
     public void touchedEnemy(Enemy enemy) {
         super.touchedEnemy(enemy);
         this.mapEntityStatus = MapEntityStatus.REMOVED;
+        File fireballkill = new File("Resources/enemydeath.wav");
+        PlaySound(fireballkill,0.5);
     }
 
     @Override

@@ -1,6 +1,7 @@
 package Collectables;
 
 import java.awt.image.*;
+import java.io.File;
 
 import Level.MapEntityStatus;
 import Level.Player;
@@ -32,6 +33,8 @@ public class Megacoin extends Coin {
     public void touchedPlayer(Player player) {
         player.addCoin(value);
         this.mapEntityStatus = MapEntityStatus.REMOVED;
+        File coinsound = new File("Resources/coinsound.wav");
+        PlaySound(coinsound,2);
     }
 
 }

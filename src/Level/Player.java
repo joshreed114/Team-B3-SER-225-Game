@@ -291,6 +291,8 @@ public abstract class Player extends GameObject {
             // add hairball enemy to the map for it to offically spawn in the level
             map.addPowerUp(hairball);
             powerState = PowerState.FIRE;
+            File fireball = new File("Resources/fireball.wav");
+            PlaySound(fireball,1);
         }
 
         if (Keyboard.isKeyUp(POWERUP_ONE_KEY)) {
@@ -305,7 +307,7 @@ public abstract class Player extends GameObject {
         if (previousAirGroundState == AirGroundState.GROUND && airGroundState == AirGroundState.GROUND) {
             // sets animation to a JUMP animation based on which way player is facing
             currentAnimationName = facingDirection == Direction.RIGHT ? "JUMP_RIGHT" : "JUMP_LEFT";
-            PlaySound(jump, 0.15);
+            PlaySound(jump, 0.05);
             // player is set to be in air and then player is sent into the air
             airGroundState = AirGroundState.AIR;
             jumpForce = jumpHeight;
