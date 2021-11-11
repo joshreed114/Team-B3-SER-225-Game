@@ -108,7 +108,7 @@ public class BugEnemy extends Enemy {
         if(player.getY() + 35 < this.getY()) {
             this.hurtEnemy(this);
 			File killenemy = new File("Resources/enemydeath.wav");
-			PlaySound(killenemy,1);
+			PlaySound(killenemy,2);
         }
         //Otherwise, hurt the player
         else {
@@ -144,22 +144,6 @@ public class BugEnemy extends Enemy {
             });
         }};
     }
-    public static void PlaySound(File Sound, double vol) {
-		try {
-			Clip clip = AudioSystem.getClip();
-			clip.open(AudioSystem.getAudioInputStream(Sound));
-			clip.getLevel();
-			setVol(vol, clip);
-			clip.start();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
-	public static void setVol(double vol, Clip clip) {
-		FloatControl gain = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
-		dB = (float) (Math.log(vol) / (Math.log(10)) * 20);
-		gain.setValue(dB);
-	}
+   
 
 }

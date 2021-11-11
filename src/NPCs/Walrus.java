@@ -59,7 +59,7 @@ public class Walrus extends NPC {
 	public void drawMessage(GraphicsHandler graphicsHandler) {
 		// draws a box with a border (think like a speech box)
 		graphicsHandler.drawFilledRectangleWithBorder(Math.round(getCalibratedXLocation() - 2),
-				Math.round(getCalibratedYLocation() - 24), 200, 25, Color.WHITE, Color.BLACK, 2);
+				Math.round(getCalibratedYLocation() - 24), 210, 25, Color.WHITE, Color.BLACK, 2);
 
 		// draws message "Hello" in the above speech box
 		message.setLocation(getCalibratedXLocation() + 2, getCalibratedYLocation() - 8);
