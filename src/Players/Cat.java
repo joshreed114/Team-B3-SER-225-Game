@@ -11,12 +11,26 @@ import GameObject.ImageEffect;
 import GameObject.SpriteSheet;
 import Level.Player;
 
+/*
+NOTES
+
+* The game (in Settings [a.k.a PlayLevelScreen]) updates the Player's [Cat's] "skin" by calling a "new"
+* method called setAnimations in AnimatedSprite.java [public], which allows PlayLevelScreen to update
+* which SpriteSheet the game is drawing for the Player WITHOUT having to instantiate a new Player.
+* The downside: the player must "move" [cycle through a SpriteSheet frame] for the changes to take effect
+TODO: Fix above downside -- probably requires a new implementation of this feature
+TODO: In Settings, draw Skin on screen instead of "Orange", "Brown", etc.
+TODO: Updated skin does not save when starting new level or upon death [because game creates new Player instances?]
+*/
+
 // This is the class for the Cat player character
 // basically just sets some values for physics and then defines animations
 public class Cat extends Player {
 
-	public Cat(float x, float y) {
-		super(new SpriteSheet(ImageLoader.load("Cat.png"), 24, 24), x, y, "STAND_RIGHT");
+	// Image argument should be a .png file in Resources (such as BrownCat.png or OrangeCat.png)
+	// Image argument gets passed up to Screencoordinator, PlayLevelScreen
+	public Cat(float x, float y, String image) {
+		super(new SpriteSheet(ImageLoader.load(image), 24, 24), x, y, "STAND_RIGHT");
 		gravity = .5f;
 		terminalVelocityY = 6f;
 		jumpHeight = 14.5f;
