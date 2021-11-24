@@ -47,12 +47,6 @@ public class AnimatedSprite implements IntersectableRectangle {
 		updateCurrentFrame();
 	}
 
-	// Allows PlayLevelScreen to update Cat skin without creating new Player instance
-	public void setAnimations(String filename)
-	{
-		this.animations = getAnimations(new SpriteSheet(ImageLoader.load(filename), 24, 24));
-	}
-
     public AnimatedSprite(float x, float y, HashMap<String, Frame[]> animations, String startingAnimationName) {
         this.x = x;
         this.y = y;
@@ -76,6 +70,15 @@ public class AnimatedSprite implements IntersectableRectangle {
         this.animations = new HashMap<>();
         this.currentAnimationName = "";
     }
+
+	// Allows PlayLevelScreen to update Cat skin without creating new Player instance
+	public void setAnimations(String filename)
+	{
+		this.animations = getAnimations(new SpriteSheet(ImageLoader.load(filename), 24, 24));
+		// calls updateCurrentFrame so that the game immediately draws the updated sprite without waiting for new animation name
+		// if you remove this, there will be a lag between the skin change and the updated sprite showing
+		this.updateCurrentFrame();
+	}
 
 	public void update() {
 		// if animation name has been changed (previous no longer equals current), setup for the new animation and start using it

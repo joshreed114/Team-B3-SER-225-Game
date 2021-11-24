@@ -555,16 +555,15 @@ public class PlayLevelScreen extends Screen implements PlayerListener {
 						} else if (settingsMenuItemSelected == 3) {
 
 							if (currentSettingLevelHovered == 0) {
-								this.player.setAnimations("OrangeCat.png");
+								setSkin(SkinState.ORANGE);
 								settingsActive = false;
 							}
 							if (currentSettingLevelHovered == 1) {
-								this.player.setAnimations("BrownCat.png");
+								setSkin(SkinState.BROWN);
 								settingsActive = false;
-
 							}
 							if (currentSettingLevelHovered == 2) {
-								this.player.setAnimations("WhiteCat.png");
+								setSkin(SkinState.WHITE);
 								settingsActive = false;
 							}
 						}
@@ -636,6 +635,13 @@ public class PlayLevelScreen extends Screen implements PlayerListener {
 
 	public PlayLevelScreenState getPlayLevelScreenState() {
 		return playLevelScreenState;
+	}
+
+	// set Player's skin
+	public void setSkin(String filename)
+	{
+		this.cat_filename = filename;
+		this.player.setAnimations(cat_filename);
 	}
 
 	// added set volume off
