@@ -33,7 +33,7 @@ import org.xml.sax.SAXNotSupportedException;
 
 // This class is for when the platformer game is actually being played
 public class PlayLevelScreen extends Screen implements PlayerListener {
-	private String cat_filename = "OrangeCat.png"; // Default Cat skin
+	private String activeSkin = SkinState.DEFAULT; // Default Cat skin
 	protected ScreenCoordinator screenCoordinator;
 	protected Map map;
 	protected Player player;
@@ -214,7 +214,7 @@ public class PlayLevelScreen extends Screen implements PlayerListener {
 		}
 
 		// setup player
-		this.player = new Cat(map.getPlayerStartPosition().x, map.getPlayerStartPosition().y, cat_filename);
+		this.player = new Cat(map.getPlayerStartPosition().x, map.getPlayerStartPosition().y, activeSkin);
 		if (currentLevel > 0) {
 			player.unlockPowerUpOne();
 		}
@@ -640,8 +640,8 @@ public class PlayLevelScreen extends Screen implements PlayerListener {
 	// set Player's skin
 	public void setSkin(String filename)
 	{
-		this.cat_filename = filename;
-		this.player.setAnimations(cat_filename);
+		this.activeSkin = filename;
+		this.player.setAnimations(activeSkin);
 	}
 
 	// added set volume off
