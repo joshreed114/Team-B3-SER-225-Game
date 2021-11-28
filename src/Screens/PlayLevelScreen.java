@@ -76,6 +76,10 @@ public class PlayLevelScreen extends Screen implements PlayerListener {
 	protected SpriteFont dragonBallZ;
 	protected SpriteFont classic;
 	protected SpriteFont Techno;
+	
+	// control options;
+	protected SpriteFont ArrowKeys;
+	protected SpriteFont WASD;
 
 	protected Stopwatch keyTimer = new Stopwatch();
 	protected int pointerLocationX, pointerLocationY;
@@ -85,9 +89,14 @@ public class PlayLevelScreen extends Screen implements PlayerListener {
 	protected boolean volActive = false;
 	protected boolean aspectActive = false;
 	protected boolean MusicActive = false;
+	protected boolean controlsActive = false;
 	public boolean screenS = true;
 	public boolean screenM = false;
 	public boolean screenL = false;
+	
+	// added controls
+	public boolean controlArrow = true;
+	public boolean controlWASD = false;
 
 	// added music
 	public boolean Zmusic = true;
@@ -96,6 +105,7 @@ public class PlayLevelScreen extends Screen implements PlayerListener {
 
 	protected SpriteFont volumeLevel;
 	protected SpriteFont MusicOptions;
+	protected SpriteFont Controls;
 	protected SpriteFont aspectRatioLevel;
 
 	public PlayLevelScreen(ScreenCoordinator screenCoordinator, GameWindow gameWindow, MusicData musicData) {
@@ -113,51 +123,63 @@ public class PlayLevelScreen extends Screen implements PlayerListener {
 		mainMenuButton.setOutlineThickness(3);
 		// Settings Buttons
 		// Sound Settings
-		volumeLevel = new SpriteFont("Volume: ", 490, 210, "Comic Sans", 30, new Color(49, 207, 240));
+		volumeLevel = new SpriteFont("Volume: ", 490, 150, "Comic Sans", 30, new Color(49, 207, 240));
 		volumeLevel.setOutlineColor(Color.black);
 		volumeLevel.setOutlineThickness(3);
 
 		// changed vol settings to off, low, full
 
-		offVol = new SpriteFont("Off ", 370, 245, "Comic Sans", 30, new Color(49, 207, 240));
+		offVol = new SpriteFont("Off ", 370, 200, "Comic Sans", 30, new Color(49, 207, 240));
 		offVol.setOutlineColor(Color.black);
 		offVol.setOutlineThickness(3);
-		lowVol = new SpriteFont("Low ", 500, 245, "Comic Sans", 30, new Color(49, 207, 240));
+		lowVol = new SpriteFont("Low ", 500, 200, "Comic Sans", 30, new Color(49, 207, 240));
 		lowVol.setOutlineColor(Color.black);
 		lowVol.setOutlineThickness(3);
-		HighVol = new SpriteFont("Full ", 670, 245, "Comic Sans", 30, new Color(49, 207, 240));
+		HighVol = new SpriteFont("Full ", 670, 200, "Comic Sans", 30, new Color(49, 207, 240));
 		HighVol.setOutlineColor(Color.black);
 		HighVol.setOutlineThickness(3);
 		// Aspect Ratio Settings
-		aspectRatioLevel = new SpriteFont("Aspect Ratio: ", 470, 330, "Comic Sans", 30, new Color(49, 207, 240));
+		aspectRatioLevel = new SpriteFont("Aspect Ratio: ", 470, 260, "Comic Sans", 30, new Color(49, 207, 240));
 		aspectRatioLevel.setOutlineColor(Color.black);
 		aspectRatioLevel.setOutlineThickness(3);
-		smallScreen = new SpriteFont("Small ", 360, 370, "Comic Sans", 30, new Color(49, 207, 240));
+		smallScreen = new SpriteFont("Small ", 360, 310, "Comic Sans", 30, new Color(49, 207, 240));
 		smallScreen.setOutlineColor(Color.black);
 		smallScreen.setOutlineThickness(3);
-		mediumScreen = new SpriteFont("Medium ", 490, 370, "Comic Sans", 30, new Color(49, 207, 240));
+		mediumScreen = new SpriteFont("Medium ", 490, 310, "Comic Sans", 30, new Color(49, 207, 240));
 		mediumScreen.setOutlineColor(Color.black);
 		mediumScreen.setOutlineThickness(3);
-		bigScreen = new SpriteFont("Large ", 660, 370, "Comic Sans", 30, new Color(49, 207, 240));
+		bigScreen = new SpriteFont("Large ", 660, 310, "Comic Sans", 30, new Color(49, 207, 240));
 		bigScreen.setOutlineColor(Color.black);
 		bigScreen.setOutlineThickness(3);
 
 		// music options
 
-		MusicOptions = new SpriteFont("Music Options: ", 430, 440, "Comic Sans", 30, new Color(49, 207, 240));
+		MusicOptions = new SpriteFont("Music Options: ", 430, 380, "Comic Sans", 30, new Color(49, 207, 240));
 		MusicOptions.setOutlineColor(Color.black);
 		MusicOptions.setOutlineThickness(3);
 
-		dragonBallZ = new SpriteFont("DragonBallZ ", 270, 485, "Comic Sans", 30, new Color(49, 207, 240));
+		dragonBallZ = new SpriteFont("DragonBallZ ", 270, 425, "Comic Sans", 30, new Color(49, 207, 240));
 		dragonBallZ.setOutlineColor(Color.black);
 		dragonBallZ.setOutlineThickness(3);
-		classic = new SpriteFont("Classic ", 500, 485, "Comic Sans", 30, new Color(49, 207, 240));
+		classic = new SpriteFont("Classic ", 500, 425, "Comic Sans", 30, new Color(49, 207, 240));
 		classic.setOutlineColor(Color.black);
 		classic.setOutlineThickness(3);
-		Techno = new SpriteFont("Techno ", 650, 485, "Comic Sans", 30, new Color(49, 207, 240));
+		Techno = new SpriteFont("Techno ", 650, 425, "Comic Sans", 30, new Color(49, 207, 240));
 		Techno.setOutlineColor(Color.black);
 		Techno.setOutlineThickness(3);
-
+		
+		// control options
+		
+		Controls = new SpriteFont("Controls: ", 470, 470, "Comic Sans", 30, new Color(49, 207, 240));
+		Controls.setOutlineColor(Color.black);
+		Controls.setOutlineThickness(3);
+		
+		ArrowKeys = new SpriteFont("Arrow Keys ", 350, 515, "Comic Sans", 30, new Color(49, 207, 240));
+		ArrowKeys.setOutlineColor(Color.black);
+		ArrowKeys.setOutlineThickness(3);
+		WASD = new SpriteFont("WASD ", 580, 515, "Comic Sans", 30, new Color(49, 207, 240));
+		WASD.setOutlineColor(Color.black);
+		WASD.setOutlineThickness(3);
 	}
 
 	public void initialize() {
@@ -294,10 +316,10 @@ public class PlayLevelScreen extends Screen implements PlayerListener {
 			} else if (currentMenuItemHovered < 1) {
 				currentMenuItemHovered = 1;
 			}
-			if (settingsMenuItemSelected > 2) {
+			if (settingsMenuItemSelected > 3) {
 				settingsMenuItemSelected = 0;
 			} else if (settingsMenuItemSelected < 0) {
-				settingsMenuItemSelected = 2;
+				settingsMenuItemSelected = 3;
 			} 
 			if (currentSettingLevelHovered > 2) {
 				currentSettingLevelHovered = 0;
@@ -329,6 +351,8 @@ public class PlayLevelScreen extends Screen implements PlayerListener {
 				dragonBallZ.setColor(new Color(49, 207, 240));
 				classic.setColor(new Color(49, 207, 240));
 				Techno.setColor(new Color(49, 207, 240));
+				ArrowKeys.setColor(new Color(49, 207, 240));
+				WASD.setColor(new Color(49, 207, 240));
 
 				if (currentSettingLevelHovered == 0) {
 					// added
@@ -336,7 +360,7 @@ public class PlayLevelScreen extends Screen implements PlayerListener {
 					lowVol.setColor(new Color(49, 207, 240));
 					HighVol.setColor(new Color(49, 207, 240));
 					pointerLocationX = 330;
-					pointerLocationY = 225;
+					pointerLocationY = 180;
 				}
 
 				if (currentSettingLevelHovered == 1) {
@@ -345,7 +369,7 @@ public class PlayLevelScreen extends Screen implements PlayerListener {
 					lowVol.setColor(new Color(255, 215, 0));
 					HighVol.setColor(new Color(49, 207, 240));
 					pointerLocationX = 470;
-					pointerLocationY = 225;
+					pointerLocationY = 180;
 				}
 				if (currentSettingLevelHovered == 2) {
 					// added
@@ -353,7 +377,7 @@ public class PlayLevelScreen extends Screen implements PlayerListener {
 					lowVol.setColor(new Color(49, 207, 240));
 					HighVol.setColor(new Color(255, 215, 0));
 					pointerLocationX = 640;
-					pointerLocationY = 225;
+					pointerLocationY = 180;
 				}
 
 			} else if (settingsMenuItemSelected == 1 && settingsActive == true) {
@@ -365,6 +389,8 @@ public class PlayLevelScreen extends Screen implements PlayerListener {
 				dragonBallZ.setColor(new Color(49, 207, 240));
 				classic.setColor(new Color(49, 207, 240));
 				Techno.setColor(new Color(49, 207, 240));
+				ArrowKeys.setColor(new Color(49, 207, 240));
+				WASD.setColor(new Color(49, 207, 240));
 				
 				aspectActive = true;
 				if (currentSettingLevelHovered == 0) {
@@ -372,21 +398,21 @@ public class PlayLevelScreen extends Screen implements PlayerListener {
 					mediumScreen.setColor(new Color(49, 207, 240));
 					bigScreen.setColor(new Color(49, 207, 240));
 					pointerLocationX = 330;
-					pointerLocationY = 350;
+					pointerLocationY = 290;
 				}
 				if (currentSettingLevelHovered == 1) {
 					smallScreen.setColor(new Color(49, 207, 240));
 					mediumScreen.setColor(new Color(255, 215, 0));
 					bigScreen.setColor(new Color(49, 207, 240));
 					pointerLocationX = 460;
-					pointerLocationY = 350;
+					pointerLocationY = 290;
 				}
 				if (currentSettingLevelHovered == 2) {
 					smallScreen.setColor(new Color(49, 207, 240));
 					mediumScreen.setColor(new Color(49, 207, 240));
 					bigScreen.setColor(new Color(255, 215, 0));
 					pointerLocationX = 630;
-					pointerLocationY = 350;
+					pointerLocationY = 290;
 				}
 			} else if (settingsMenuItemSelected == 2 && settingsActive == true) {
 
@@ -398,6 +424,8 @@ public class PlayLevelScreen extends Screen implements PlayerListener {
 				smallScreen.setColor(new Color(49, 207, 240));
 				mediumScreen.setColor(new Color(49, 207, 240));
 				bigScreen.setColor(new Color(49, 207, 240));
+				ArrowKeys.setColor(new Color(49, 207, 240));
+				WASD.setColor(new Color(49, 207, 240));
 				
 
 				if (currentSettingLevelHovered == 0) {
@@ -405,23 +433,50 @@ public class PlayLevelScreen extends Screen implements PlayerListener {
 					classic.setColor(new Color(49, 207, 240));
 					Techno.setColor(new Color(49, 207, 240));
 					pointerLocationX = 240;
-					pointerLocationY = 465;
+					pointerLocationY = 405;
 				}
 				if (currentSettingLevelHovered == 1) {
 					dragonBallZ.setColor(new Color(49, 207, 240));
 					classic.setColor(new Color(255, 215, 0));
 					Techno.setColor(new Color(49, 207, 240));
 					pointerLocationX = 475;
-					pointerLocationY = 465;
+					pointerLocationY = 405;
 				}
 				if (currentSettingLevelHovered == 2) {
 					dragonBallZ.setColor(new Color(49, 207, 240));
 					classic.setColor(new Color(49, 207, 240));
 					Techno.setColor(new Color(255, 215, 0));
 					pointerLocationX = 620;
-					pointerLocationY = 465;
+					pointerLocationY = 405;
 				}
+			} else if (settingsMenuItemSelected == 3 && settingsActive == true) {
+				
+				controlsActive = true;
+				offVol.setColor(new Color(49, 207, 240));
+				lowVol.setColor(new Color(49, 207, 240));
+				HighVol.setColor(new Color(49, 207, 240));
+				smallScreen.setColor(new Color(49, 207, 240));
+				mediumScreen.setColor(new Color(49, 207, 240));
+				bigScreen.setColor(new Color(49, 207, 240));
+				dragonBallZ.setColor(new Color(49, 207, 240));
+				classic.setColor(new Color(49, 207, 240));
+				Techno.setColor(new Color(49, 207, 240));
+				
+				if (currentSettingLevelHovered == 0) {
+					ArrowKeys.setColor(new Color(255, 215, 0));
+					WASD.setColor(new Color(49, 207, 240));
+					pointerLocationX = 330;
+					pointerLocationY = 505;
+				}
+				if (currentSettingLevelHovered == 1) {
+					ArrowKeys.setColor(new Color(49, 207, 240));
+					WASD.setColor(new Color(255, 215, 0));
+					pointerLocationX = 550;
+					pointerLocationY = 505;
+				}
+				
 			}
+			
 
 			if (Keyboard.isKeyUp(Key.SPACE)) {
 				keyLocker.unlockKey(Key.SPACE);
@@ -483,6 +538,16 @@ public class PlayLevelScreen extends Screen implements PlayerListener {
 								setTechnoMusic();
 								settingsActive = false;
 							}
+						} else if (settingsMenuItemSelected == 3) {
+							
+							if (currentSettingLevelHovered == 0) {
+								setArrowControls();
+								settingsActive = false;
+							}
+							if (currentSettingLevelHovered == 1) {
+								setWASDcontrols();
+								settingsActive = false;
+							}
 						}
 					}
 				}
@@ -528,6 +593,7 @@ public class PlayLevelScreen extends Screen implements PlayerListener {
 				volumeLevel.draw(graphicsHandler);
 				aspectRatioLevel.draw(graphicsHandler);
 				MusicOptions.draw(graphicsHandler);
+				Controls.draw(graphicsHandler);
 				offVol.draw(graphicsHandler);
 				lowVol.draw(graphicsHandler);
 				HighVol.draw(graphicsHandler);
@@ -537,6 +603,8 @@ public class PlayLevelScreen extends Screen implements PlayerListener {
 				dragonBallZ.draw(graphicsHandler);
 				classic.draw(graphicsHandler);
 				Techno.draw(graphicsHandler);
+				ArrowKeys.draw(graphicsHandler);
+				WASD.draw(graphicsHandler);
 
 			}
 		}
@@ -630,6 +698,14 @@ public class PlayLevelScreen extends Screen implements PlayerListener {
 		// add music
 		mD.setClipOff();
 		this.playTheTechno();
+	}
+	
+	public void setArrowControls() {
+		player.updateArrowControls();
+	}
+	
+	public void setWASDcontrols() {
+		player.updateWASDcontrols();
 	}
 
 	public static void playTheMusic() {

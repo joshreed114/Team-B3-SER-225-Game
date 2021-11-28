@@ -34,6 +34,7 @@ public class Cat extends Player {
 	public void update() {
 		super.update();
 	}
+	
 
 	@Override
 	public void draw(GraphicsHandler graphicsHandler) {

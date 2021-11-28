@@ -69,6 +69,22 @@ public abstract class Player extends GameObject {
 
     // if true, player cannot be hurt by enemies (good for testing)
     protected boolean isInvincible = false;
+    
+    public void updateArrowControls() {
+		JUMP_KEY = Key.UP;
+		MOVE_LEFT_KEY = Key.LEFT;
+		MOVE_RIGHT_KEY = Key.RIGHT;
+		CROUCH_KEY = Key.DOWN;
+		POWERUP_ONE_KEY = Key.ONE;
+	}
+	
+	public void updateWASDcontrols() {
+		JUMP_KEY = Key.W;
+		MOVE_LEFT_KEY = Key.A;
+		MOVE_RIGHT_KEY = Key.D;
+		CROUCH_KEY = Key.S;
+		POWERUP_ONE_KEY = Key.ONE;
+	}
 
     public Player(SpriteSheet spriteSheet, float x, float y, String startingAnimationName) {
         super(spriteSheet, x, y, startingAnimationName);
