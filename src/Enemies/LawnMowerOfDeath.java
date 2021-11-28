@@ -1,7 +1,5 @@
 package Enemies;
-
 import java.util.HashMap;
-
 import Builders.FrameBuilder;
 import Engine.ImageLoader;
 import GameObject.Frame;
