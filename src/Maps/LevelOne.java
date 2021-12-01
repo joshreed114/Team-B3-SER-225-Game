@@ -39,7 +39,7 @@ public class LevelOne extends Map {
         return enemies;
     }
 
-    // Add Coins to level
+    // Adds Coins and potions to level
     @Override
     public ArrayList<Collectable> loadCollectables() {
         ArrayList<Collectable> collectables = new ArrayList<>();
@@ -61,6 +61,18 @@ public class LevelOne extends Map {
             1020,
             503
             ));
+
+        collectables.add(new SpeedBoost(
+            ImageLoader.load("SpeedBoostCollectable.png"),
+                390,
+                730
+             ));
+
+        collectables.add(new Invincibility(
+                ImageLoader.load("InvincibilityCollectable.png"),
+                430,
+                730
+        ));
 
         return collectables;
     }

@@ -2,11 +2,16 @@ package Collectables;
 
 import java.awt.image.*;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 import Level.Collectable;
 import Level.MapEntityStatus;
 import Level.Player;
 
 public class SpeedBoost extends Collectable {
+
+    protected Timer tmr;
 
     public SpeedBoost(BufferedImage file, int x, int y)
     {
@@ -24,10 +29,15 @@ public class SpeedBoost extends Collectable {
     }
 
     public void touchedPlayer(Player player) {
-        player.setSpeed((float) (player.getSpeed() * 1.7)); // WORKING
-        // Need to add some stuff here that sets the player's speed back to the original value after some duration
-        // Think we can use the Stopwatch.java class in Utils to run a Thread but I'm not sure, haven't looked all that much
+        player.setSpeed((float) (player.getSpeed() * 2));
         this.mapEntityStatus = MapEntityStatus.REMOVED;
+        tmr = new Timer();
+        tmr.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                player.setSpeed((float) (player.getSpeed() / 2));
+            }
+        }, 10000);
     }
 
 }
