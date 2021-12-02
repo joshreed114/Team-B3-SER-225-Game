@@ -1,0 +1,110 @@
+## Introduction
+
+This document was written by one of the student development teams (SER 225) that inherited this project after Alex (and his team) created it. The purpose of this document is to provide some clarity on how to interact with the existing project documentation and reflect our thoughts about the project. Some of the original documentation created by Alex is now out-dated because our team (and previous ones) have implemented new features and fixed outstanding bugs that address some of the concerns he raised. Nonetheless, nearly all of the program structure is the same, so using the original documentation is still the best way to familiarize oneself with the program.
+
+## Overview & How to Use the Documentation
+
+When we first inherited this project, we had "normal" struggles when it came to learning about the code and how the program works. There's a ton of code, multiple packages, and many pages of documentation to sift through, and it can be overwhelming to try to figure out where to begin. We wrote this file to try to make the next team's lives a bit easier for when it comes time for them to do the same thing. A lot of what this document expresses is reflected in Alex's (the original) documentation (the docs folder), so the point of this document is less about introducing new concerns about the program and more about providing a one-stop-shop for knowing how to start developing this project further. Toward the end of this file, however, are some of our team's recommendations for new features and general advice for kicking development off.
+
+Here are the steps we recommend for learning about the project:
+
+Step 1: Read the README!
+
+Go into the main folder and read Alex's README markdown file. It gives some background information about the project. Now would also be a good time to read through the game-overview markdown file in the GameOverview folder. Return to this document afterward.
+
+Step 2: Setting up Git & GitHub
+
+Getting past GitHub's learning curve was easily our team's foremost struggle when we took this project over. It's really important to read all of the documents provided by your professor/ project manager/ project supervisor about Git processes. Supplement that knowledge by watching YouTube videos, performing Google searches, etc. about Git, and get as much of an understanding of what Git is and how it works before attempting to use it.
+
+Once you feel comfortable explaining Git at a high-level, set up your GitHub repo. Follow the steps provided by your instructor to do so, then verify that all team members can access and contribute to the repo. It is essential that this be done before your first classes where you are provided with time to work on the project. It's probably worth holding a Zoom meeting with the entire team to go through this process, and talk about how to use Git from the command line.
+
+Note: afterward is an excellent time to set up IntelliJ if you haven't already, and set Git up on your computer. You can definitely use other IDEs, but IntelliJ is likely the one that most of your peers will use so there is tremendous benefit in using the same software (for when it comes to troubleshooting).
+
+Step 3: Investigate the Project Structure
+
+Understand what each folder contains. What is the .docs folder? .src? Which ones contain the code and other materials you'll need to develop the game? You don't need to investigate the actual code at this point (and shouldn't because it would probably be a lot to take in, but you should know what each folder does at a high-level).
+
+Step 4: Review the Original Documentation
+
+Once you've completed the above steps, we recommend diving into the original documentation.
+
+Alex created extensive documentation that explains nearly all components of the project. Head over to the Home folder and read the home markdown file to see what it has to say. Note that home holds the table of contents for the original documentation. After that, we recommend reading the how-to-use-this-site markdown file in the HowToUseThisSite folder. Follow Alex's steps in that document: read (and understand) the Game Engine documentation, then the Game Code Details documentation. A solid understanding of what a game engine is (and how the one used in this project actually works at a high-level) is crucial to development. Make sure you understand how the engine incorporates different components of the program. The Game Code Details sections are probably too dense to digest in one sitting: we recommend taking this part of the documentation one section at a time and doing your best to understand what each one does before progressing to the next.
+
+We recommend reading through all the solo markdown files in the GameCodeDetailsSubSections folder, then reading the associated folders afterward. You will definitely need to read through these files multiple times, and should revisit them throughout your development to improve your understanding of the game's implementation. There's really no benchmark at this point in terms of knowing how well you understand the game. You'll have to mess around with the code to cement what knowledge you do have, and work from there to learn more.
+
+Step 5: Mess With the Code
+
+Before you do this, make sure you create a personal testing branch. And don't try to implement a feature yet without experimenting with the code. Neglecting to familiarize yourself with the code early-on would probably be really detrimental in the long run. You'll work slower overall, be largely unable to debug or troubleshoot issues with your teammates, and the quality of your development will suffer (the person who wrote this section is speaking from experience).
+
+There's no specific guidelines for how to go about learning the code, but a good rule of thumb is do things that interact with different packages or modules. Maybe do something to break the game, then try to understand where and why it broke. Pulling on different threads will lead you to understanding how different components of the program interact to pull together a working videogame.
+
+Anyway, here are some of the ideas we have for familiarizing yourself with the codebase...
+-- Find where in the code the volume controls in the Setting screen are located (hint: PlayLevelScreen.java), then disable one of the options somehow. See if your changes are reflected in-game.
+-- Add some coins to Level One (hint: take a look at LevelOne.java).
+-- The original documentation says the game is a little lame because players cannot jump on top of enemies to kill them, as would be typical in a platformer game. But, that's one of the features we implemented. Find where we did, disable it, and try to win the game.
+-- Change the player's running speed and jump height
+-- Go mess around with the MapEditor. We fixed a lot of bugs in that associated classes, but some still remain of course. Investigate how the game implements maps (the text files, the classes, etc.).
+-- Change the color of the text on the main screen
+-- Change what the NPCs' dialogue boxes display
+
+## What Our Team Developed
+
+Our team's first priority when we inherited this project was to decide upon a creative vision. We loosely defined what we wanted our end product to look like, and before we began developing any features we made sure to approve our individual development decisions with the entire team. We found that this practice helped to unify our individual creative visions into a single, functioning endeavour.
+
+To accomplish that vision, we decided we needed to fix as many outstanding bugs as we could find. Once we were done with the bulk of the bug fixes, we figured we were ready to start developing new features. Also, the bugs tended to be easier to fix than implementing new features so they helped us improve our working knowledge of the codebase.
+
+Here are the most important bugs we fixed:
+-- A bug in Level Three that caused the program to freeze when the moving horizontal platforms aligned in a specific manner
+-- A design flaw that caused Level Four (and therein the entire game) to be unbeatable
+-- Player attack (hairballs) kept freezing on-screen
+-- Game's aspect ratio did not scale correctly
+-- Player was previously unable to jump on enemies to kill them (Super Mario style)
+-- A multitude of bugs in the Map Editor
+
+And the new features we implemented include:
+-- Making water lethal to the player
+-- Added Collectables (coins, invincibility pick-up, speed boost pick-up, etc.)
+-- Added new enemies with new abilities
+-- Added customization options to the controls (added the WASD option [previously only arrow keys could be used])
+-- Added full-screen
+-- Added sound effects to a ton of in-game elements (player death, player attack, coin pick-up, etc.)
+-- Added currency (coins)
+-- Added interface elements to track the number of coins collected (coin counter in top right of screen, end-of-level counter, etc.)
+-- Added new music options (techno, etc.)
+-- Added hints to indicate which NPCs could be spoken to
+-- Created a Boss Level (after Level Four)
+-- Created a Tutorial Level (before Level One)
+-- Created this document
+
+## Lessons Learned
+
+As much as possible, avoid selecting backlog items that involve interacting with the same sections of code (even the same classes). It can be very time-consuming to resolve the discrepancies and make sure all the changes are reflected in master.
+
+Make sure you always create a branch before developing a new feature. Don't contribute directly to master. Use pull requests as-needed.
+
+Don't wait until the day before the deadline to merge branches. Work proactively and get as much development done early as possible.
+
+Make sure you follow Scrum principles (or the principles of whatever other Agile methodology you use). Don't add new backlog items once the Sprint has begun, conduct your Scrum check-in meetings, and meet via Zoom or some other medium to recap the Sprint. Update the Sprint work plan consistently. Our group did not rotate the duties of the Scrum Master, which helped us improve our efficiency each Sprint because the learning curve continued to diminish.
+
+If you set out to fix a bug, make sure it isn't part of a feature that you plan to delete or massively change anyway. Be diligent about which backlog items you select to make sure you're maximizing the amount of time you have for useful development.
+
+## Our Enhancement Ideas
+
+Our group had a lot of ideas that we would have liked to implement but didn't get around to, some of which are original suggestions by Alex. Some examples include:
+-- Implementing a player health system (multiple lives before you fail the game) with corresponding interface graphics
+-- The ability to hold down the jump key to adjust jumping height
+
+Other recommendations we have that we think would be super cool to see are:
+-- Updating all the graphics in the game (even though Alex is a great Paint artist, sometimes even masterpieces need to be restored)
+-- Fixing the text crawl on the intro screen (either making it actually function in a meaningful way or incorporating it somewhere else in the program)
+-- Add a cosmetics shop
+-- Adjust graphics according to time-of-day (i.e., at 6 pm the game starts to use night-themed graphics and tiles)
+-- Continuing to update the project documentation (it is a huge project to comb through all the original documentation, delete or revise the outdated components, create new files as-needed, and develop out the GitHub pages website) would have extremely high utility to future development teams
+-- Fix the bug that prevents the main screen from scaling to full-screen
+-- Implement an enemy health system (i.e., we don't think the Boss Mouse should die from a single hit)
+-- Create a fifth playing level
+-- Add new types of players (cats aren't the only pets that get lost outside!)
+
+## Brief Note
+
+We wrote this as a text file because we did not want to risk interfering with the existing structure of the markdown files. If you decide to update the game's documentation (which would be awesome), make sure you have a good understanding of Jekyll.
