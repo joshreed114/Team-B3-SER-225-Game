@@ -1,6 +1,7 @@
 package Level;
 
 import java.awt.image.BufferedImage;
+import java.awt.Color;
 import java.util.HashMap;
 
 import Engine.GraphicsHandler;
@@ -17,6 +18,7 @@ import Utils.Stopwatch;
 public class NPC extends MapEntity {
 	protected boolean talkedTo = false;
 	protected SpriteFont message;
+	protected SpriteFont messagePrompt;
 	protected int talkedToTime;
 	protected Stopwatch timer = new Stopwatch();
 
@@ -24,36 +26,42 @@ public class NPC extends MapEntity {
 		super(x, y, spriteSheet, startingAnimation);
 		this.message = createMessage();
 		this.talkedToTime = talkedToTime;
+		this.messagePrompt = new SpriteFont("Press SPACE to talk!", getX(), getY() - 10, "Arial", 12, Color.BLACK);
 	}
 
 	public NPC(float x, float y, HashMap<String, Frame[]> animations, String startingAnimation, int talkedToTime) {
 		super(x, y, animations, startingAnimation);
 		this.message = createMessage();
 		this.talkedToTime = talkedToTime;
+		this.messagePrompt = new SpriteFont("Press SPACE to talk!", getX(), getY() - 10, "Arial", 12, Color.BLACK);
 	}
 
 	public NPC(BufferedImage image, float x, float y, String startingAnimation, int talkedToTime) {
 		super(image, x, y, startingAnimation);
 		this.message = createMessage();
 		this.talkedToTime = talkedToTime;
+		this.messagePrompt = new SpriteFont("Press SPACE to talk!", getX(), getY() - 10, "Arial", 12, Color.BLACK);
 	}
 
 	public NPC(BufferedImage image, float x, float y, int talkedToTime) {
 		super(image, x, y);
 		this.message = createMessage();
 		this.talkedToTime = talkedToTime;
+		this.messagePrompt = new SpriteFont("Press SPACE to talk!", getX(), getY() - 10, "Arial", 12, Color.BLACK);
 	}
 
 	public NPC(BufferedImage image, float x, float y, int talkedToTime, float scale) {
 		super(image, x, y, scale);
 		this.message = createMessage();
 		this.talkedToTime = talkedToTime;
+		this.messagePrompt = new SpriteFont("Press SPACE to talk!", getX(), getY() - 10, "Arial", 12, Color.BLACK);
 	}
 
 	public NPC(BufferedImage image, float x, float y, int talkedToTime, float scale, ImageEffect imageEffect) {
 		super(image, x, y, scale, imageEffect);
 		this.message = createMessage();
 		this.talkedToTime = talkedToTime;
+		this.messagePrompt = new SpriteFont("Press SPACE to talk!", getX(), getY() - 10, "Arial", 12, Color.BLACK);
 	}
 
 	public NPC(BufferedImage image, float x, float y, int talkedToTime, float scale, ImageEffect imageEffect,
@@ -61,6 +69,7 @@ public class NPC extends MapEntity {
 		super(image, x, y, scale, imageEffect, bounds);
 		this.message = createMessage();
 		this.talkedToTime = talkedToTime;
+		this.messagePrompt = new SpriteFont("Press SPACE to talk!", getX(), getY() - 10, "Arial", 12, Color.BLACK);
 	}
 
 	protected SpriteFont createMessage() {
@@ -89,10 +98,18 @@ public class NPC extends MapEntity {
 		if (message != null && talkedTo) {
 			drawMessage(graphicsHandler);
 		}
+		else if (messagePrompt != null && !talkedTo){
+			drawMessagePrompt(graphicsHandler);
+		}
 	}
 
 	// A subclass can override this method to specify what message it displays upon
 	// being talked to
 	public void drawMessage(GraphicsHandler graphicsHandler) {
+	}
+
+	// A subclass can override this method to specify what message it displays when
+	// not being talked to
+	public void drawMessagePrompt(GraphicsHandler graphicsHandler) {
 	}
 }

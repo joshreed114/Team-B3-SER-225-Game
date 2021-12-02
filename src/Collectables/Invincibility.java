@@ -1,6 +1,8 @@
 package Collectables;
 
 import java.awt.image.*;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import Level.Collectable;
 import Level.MapEntityStatus;
@@ -9,6 +11,8 @@ import Level.Player;
 // Could change Invincibility to a water-proof potion type thing that player can equip using a key and has an amount of time attached to it
 
 public class Invincibility extends Collectable {
+
+    protected Timer tmr;
 
     public Invincibility(BufferedImage file, int x, int y)
     {
@@ -26,10 +30,15 @@ public class Invincibility extends Collectable {
     }
 
     public void touchedPlayer(Player player) {
-        player.setInvincible(true); // WORKING
-        // Need to add some stuff here that sets the player's god-mode back to false after some duration
-        // Think we can use the Stopwatch.java class in Utils to run a Thread but I'm not sure, haven't looked all that much
+        player.setInvincible(true);
         this.mapEntityStatus = MapEntityStatus.REMOVED;
+        tmr = new Timer();
+        tmr.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                player.setInvincible(false);
+            }
+        }, 10000);
     }
 
 }
