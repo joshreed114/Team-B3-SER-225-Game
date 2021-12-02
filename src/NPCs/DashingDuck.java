@@ -15,7 +15,7 @@ import Level.Player;
 import SpriteFont.SpriteFont;
 import Utils.Point;
 
-// This class is for the walrus NPC
+// This class is for the duck NPC
 public class DashingDuck extends NPC {
 
 	public DashingDuck(Point location, Map map) {
@@ -59,10 +59,21 @@ public class DashingDuck extends NPC {
 	public void drawMessage(GraphicsHandler graphicsHandler) {
 		// draws a box with a border (think like a speech box)
 		graphicsHandler.drawFilledRectangleWithBorder(Math.round(getCalibratedXLocation() - 2),
-				Math.round(getCalibratedYLocation() - 24), 150, 25, Color.WHITE, Color.BLACK, 2);
+				Math.round(getCalibratedYLocation() - 24), 157, 25, Color.WHITE, Color.BLACK, 2);
 
 		// draws message "Hello" in the above speech box
 		message.setLocation(getCalibratedXLocation() + 2, getCalibratedYLocation() - 8);
 		message.draw(graphicsHandler);
+	}
+
+	@Override
+	public void drawMessagePrompt(GraphicsHandler graphicsHandler) {
+		// draws a box with a border (think like a speech box)
+		graphicsHandler.drawFilledRectangleWithBorder(Math.round(getCalibratedXLocation() - 2),
+				Math.round(getCalibratedYLocation() - 24), 122 , 25, Color.WHITE, Color.BLACK, 2);
+
+		// draws prompt in the above speech box
+		messagePrompt.setLocation(getCalibratedXLocation() + 2, getCalibratedYLocation() - 8);
+		messagePrompt.draw(graphicsHandler);
 	}
 }

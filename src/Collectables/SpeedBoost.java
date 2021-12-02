@@ -29,13 +29,13 @@ public class SpeedBoost extends Collectable {
     }
 
     public void touchedPlayer(Player player) {
-        player.setSpeed((float) (player.getSpeed() * 2));
+        player.setSpeed((float) (player.getSpeed() * 2.3));
         this.mapEntityStatus = MapEntityStatus.REMOVED;
         tmr = new Timer();
         tmr.schedule(new TimerTask() {
             @Override
             public void run() {
-                player.setSpeed((float) (player.getSpeed() / 2));
+                player.setSpeed((float) (player.getSpeed() / 2.3));
             }
         }, 10000);
     }

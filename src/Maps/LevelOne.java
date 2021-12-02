@@ -65,15 +65,16 @@ public class LevelOne extends Map {
         collectables.add(new SpeedBoost(
             ImageLoader.load("SpeedBoostCollectable.png"),
                 390,
-                730
+                725
              ));
 
+        /*
         collectables.add(new Invincibility(
                 ImageLoader.load("InvincibilityCollectable.png"),
-                430,
-                730
+                390,
+                725
         ));
-
+        */
         return collectables;
     }
 
