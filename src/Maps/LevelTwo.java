@@ -1,5 +1,6 @@
 package Maps;
 
+import Collectables.Invincibility;
 import Enemies.BugEnemy;
 import Enemies.DinosaurEnemy;
 import Enemies.LawnMowerOfDeath;
@@ -16,26 +17,22 @@ import Tilesets.LevelTwoTileset;
 import Utils.Direction;
 import Utils.Point;
 
+import java.awt.*;
 import java.util.ArrayList;
 
 import Collectables.Coin;
 
 public class LevelTwo extends Map {
 
-        
     public LevelTwo() {
         super("level_two.txt", new LevelTwoTileset(), new Point(2, 18));
     }
-    
-
-// TESTING
-
-/*
-        public LevelTwo() {
-              super("level_two.txt", new LevelTwoTileset(), new Point(121, 10));
-        }
-        */
-
+    /*
+    // TESTING
+    public LevelTwo() {
+        super("level_two.txt", new LevelTwoTileset(), new Point(121, 10));
+    }
+    */
 
     @Override
     public ArrayList<Enemy> loadEnemies() {
@@ -94,6 +91,10 @@ public class LevelTwo extends Map {
                 5434,
                 866
         ));
+
+        collectables.add(new Invincibility(
+                ImageLoader.load("InvincibilityCollectable.png"),
+                getPositionByTileIndex(42, 14)));
 
         return collectables;
     }

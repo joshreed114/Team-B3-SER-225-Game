@@ -11,6 +11,10 @@ import Level.Collectable;
 import Level.MapEntityStatus;
 import Level.Player;
 
+import Utils.Point;
+
+import java.lang.Integer;
+
 // Implements Coin ("CoinBronze.png" > Resources) entities (does so in the same way as the game implements Enemies and Power Ups)
 // This file is a modified Enemy.java replication
 // Interactions: Player.java, Camera.java, and Map.java
@@ -31,6 +35,10 @@ public class Coin extends Collectable {
             // I didn't want to spend the time figuring out how to implement that yet [not even sure if possible]
             
 	}
+    // updated constructor that allows you to use tile locations instead of pixel locations to add coins
+    public Coin(BufferedImage file, Point location) {
+        super(file, (int) location.x, (int) location.y, 0.3f);
+    }
 
     @Override
     public void initialize() {

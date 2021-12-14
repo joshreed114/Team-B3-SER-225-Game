@@ -1,5 +1,7 @@
 package Maps;
 
+import Collectables.Invincibility;
+import Collectables.SpeedBoost;
 import Enemies.BugEnemy;
 import Enemies.DinosaurEnemy;
 import Enemies.LawnMowerOfDeath;
@@ -19,17 +21,15 @@ import Collectables.Supercoin;
 
 public class LevelThree extends Map {
 
-        public LevelThree() {
-                super("level_three.txt", new MasterMapTileset(), new Point(3, 44));
-        }
-
-        // TESTING
-
-        /*
-        public LevelThree() {
-                super("level_three.txt", new MasterMapTileset(), new Point(112, 38));
-            }
-            */
+    public LevelThree() {
+        super("level_three.txt", new MasterMapTileset(), new Point(3, 44));
+    }
+    // TESTING
+    /*
+    public LevelThree() {
+        super("level_three.txt", new MasterMapTileset(), new Point(112, 38));
+    }
+    */
 
     @Override
     public ArrayList<Enemy> loadEnemies() {
@@ -88,6 +88,14 @@ public class LevelThree extends Map {
                 4328,
                 1500
         ));
+
+        collectables.add(new SpeedBoost(
+                ImageLoader.load("SpeedBoostCollectable.png"),
+                getPositionByTileIndex(24, 43)));
+
+        collectables.add(new Invincibility(
+                ImageLoader.load("InvincibilityCollectable.png"),
+                getPositionByTileIndex(63, 41)));
 
         return collectables;
     }

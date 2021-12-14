@@ -14,6 +14,7 @@ public class EditorMaps {
             add("LevelThree");
             add("LevelFour");
             add("ANewBossLevel");
+            add("TutorialLevel");
         }};
     }
 
@@ -31,6 +32,8 @@ public class EditorMaps {
                 return new LevelFour();
             case "ANewBossLevel":
                 return new NewBossLevel();
+            case "TutorialLevel":
+                return new TutorialLevel();
             default:
                 throw new RuntimeException("Unrecognized map name");
         }

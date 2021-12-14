@@ -3,11 +3,35 @@
   <component name="ChangeListManager">
     <list default="true" id="ced22ea9-e13a-452d-ac7a-9b7eb379aaab" name="Changes" comment="Bugfix push test (IntelliJ)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EditorMaps.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PlayLevelScreen.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tutorial.txt" beforeDir="false" afterPath="$PROJECT_DIR$/MapFiles/Tutorial.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TutorialCrab.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NPCs/TutorialCrab.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TutorialCrab2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NPCs/TutorialCrab2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TutorialDuck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NPCs/TutorialDuck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TutorialDuck2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NPCs/TutorialDuck2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TutorialLevel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Maps/TutorialLevel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TutorialWalrus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NPCs/TutorialWalrus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TutorialWalrus2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NPCs/TutorialWalrus2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TutorialWalrus3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NPCs/TutorialWalrus3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TutorialWalrus4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NPCs/TutorialWalrus4.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Collectables/SpeedBoost.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Collectables/SpeedBoost.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Level/NPC.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Level/NPC.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/MapEditor/EditorMaps$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/MapEditor/EditorMaps$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/MapEditor/EditorMaps.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/MapEditor/EditorMaps.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Maps/LevelOne.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Maps/LevelOne.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/NPCs/DashingDuck.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/NPCs/DashingDuck.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/NPCs/Walrus.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/NPCs/Walrus.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Screens/PlayLevelScreen$PlayLevelScreenState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Screens/PlayLevelScreen$PlayLevelScreenState.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Screens/PlayLevelScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Screens/PlayLevelScreen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Collectables/Coin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Collectables/Coin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Collectables/Invincibility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Collectables/Invincibility.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Collectables/SpeedBoost.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Collectables/SpeedBoost.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Level/NPC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Level/NPC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MapEditor/EditorMaps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MapEditor/EditorMaps.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Maps/LevelOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Maps/LevelOne.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NPCs/DashingDuck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NPCs/DashingDuck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NPCs/Walrus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NPCs/Walrus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Maps/LevelThree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Maps/LevelThree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Maps/LevelTwo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Maps/LevelTwo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Screens/PlayLevelScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Screens/PlayLevelScreen.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +73,13 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jreed\IdeaProjects\Team-B3-SER-225-Game\src\Maps" />
+      <recent name="C:\Users\jreed\IdeaProjects\Team-B3-SER-225-Game\src\NPCs" />
+      <recent name="C:\Users\jreed\IdeaProjects\Team-B3-SER-225-Game\MapFiles" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="Game" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">

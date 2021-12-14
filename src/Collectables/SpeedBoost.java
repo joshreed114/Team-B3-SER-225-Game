@@ -9,6 +9,8 @@ import Level.Collectable;
 import Level.MapEntityStatus;
 import Level.Player;
 
+import Utils.Point;
+
 public class SpeedBoost extends Collectable {
 
     protected Timer tmr;
@@ -17,6 +19,12 @@ public class SpeedBoost extends Collectable {
     {
         super(file, x, y, 0.3f); // Since not subclass of Coin, needs to directly pass scaling factor float argument to parent
 	}
+
+    // Can use tile location instead of pixel location when creating
+    public SpeedBoost(BufferedImage file, Point location)
+    {
+        super(file, (int) location.x, (int) location.y, 0.3f);
+    }
 
     @Override
     public void initialize() {

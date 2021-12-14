@@ -21,15 +21,12 @@ public class LevelOne extends Map {
     public LevelOne() {
         super("test_map.txt", new CommonTileset(), new Point(1, 15));
     }
-
-    // TESTING
-    
     /*
+    // TESTING
     public LevelOne() {
         super("test_map.txt", new CommonTileset(), new Point(32, 10));
     }
     */
-    
 
     @Override
     public ArrayList<Enemy> loadEnemies() {
@@ -68,6 +65,7 @@ public class LevelOne extends Map {
                 725
              ));
 
+        //Test for invincibility potion at start of level one
         /*
         collectables.add(new Invincibility(
                 ImageLoader.load("InvincibilityCollectable.png"),

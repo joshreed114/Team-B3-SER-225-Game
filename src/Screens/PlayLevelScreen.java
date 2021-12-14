@@ -9,6 +9,7 @@ import Maps.LevelFour;
 import Maps.LevelThree;
 import Maps.LevelTwo;
 import Maps.NewBossLevel;
+import Maps.TutorialLevel;
 import Maps.LevelOne;
 import Players.Cat;
 import SpriteFont.SpriteFont;
@@ -76,7 +77,7 @@ public class PlayLevelScreen extends Screen implements PlayerListener {
 	protected SpriteFont dragonBallZ;
 	protected SpriteFont classic;
 	protected SpriteFont Techno;
-	
+
 	// control options;
 	protected SpriteFont ArrowKeys;
 	protected SpriteFont WASD;
@@ -93,7 +94,7 @@ public class PlayLevelScreen extends Screen implements PlayerListener {
 	public boolean screenS = true;
 	public boolean screenM = false;
 	public boolean screenL = false;
-	
+
 	// added controls
 	public boolean controlArrow = true;
 	public boolean controlWASD = false;
@@ -167,13 +168,13 @@ public class PlayLevelScreen extends Screen implements PlayerListener {
 		Techno = new SpriteFont("Techno ", 650, 425, "Comic Sans", 30, new Color(49, 207, 240));
 		Techno.setOutlineColor(Color.black);
 		Techno.setOutlineThickness(3);
-		
+
 		// control options
-		
+
 		Controls = new SpriteFont("Controls: ", 470, 470, "Comic Sans", 30, new Color(49, 207, 240));
 		Controls.setOutlineColor(Color.black);
 		Controls.setOutlineThickness(3);
-		
+
 		ArrowKeys = new SpriteFont("Arrow Keys ", 350, 515, "Comic Sans", 30, new Color(49, 207, 240));
 		ArrowKeys.setOutlineColor(Color.black);
 		ArrowKeys.setOutlineThickness(3);
@@ -186,27 +187,31 @@ public class PlayLevelScreen extends Screen implements PlayerListener {
 		// define/setup map
 
 		switch (currentLevel) {
-		case 0:
-			// TODO: Change this to desired map to start on that map
-			this.map = new LevelOne();
-			map.reset();
-			break;
-		case 1:
-			this.map = new LevelTwo();
-			map.reset();
-			break;
-		case 2:
-			this.map = new LevelThree();
-			map.reset();
-			break;
-		case 3:
-			this.map = new LevelFour();
-			map.reset();
-			break;
-		case 4:
-			this.map = new NewBossLevel();
-			map.reset();
-			break;
+			case 0:
+				// TODO: Change this to desired map to start on that map
+				this.map = new TutorialLevel();
+				map.reset();
+				break;
+			case 1:
+				this.map = new LevelOne();
+				map.reset();
+				break;
+			case 2:
+				this.map = new LevelTwo();
+				map.reset();
+				break;
+			case 3:
+				this.map = new LevelThree();
+				map.reset();
+				break;
+			case 4:
+				this.map = new LevelFour();
+				map.reset();
+				break;
+			case 5:
+				this.map = new NewBossLevel();
+				map.reset();
+				break;
 		}
 
 		// setup player
@@ -236,48 +241,48 @@ public class PlayLevelScreen extends Screen implements PlayerListener {
 		if (!isGamePaused) {
 			// based on screen state, perform specific actions
 			switch (playLevelScreenState) {
-			// if level is "running" update player, map and interface/overlay screen to keep game logic for the
-			// platformer level going
-			case RUNNING:
-				player.update();
-				map.update(player);
-				break;
-			// if level has been completed, bring up level cleared screen
-			case LEVEL_COMPLETED:
-				//Passes player to cleared level so the new screen can access the player's collected coins
-				levelClearedScreen = new LevelClearedScreen(player);
-				levelClearedScreen.initialize();
-				screenTimer.setWaitTime(2500);
-				playLevelScreenState = PlayLevelScreenState.LEVEL_WIN_MESSAGE;
-				currentLevel++;
-				File win = new File("Resources/finishedlevel.wav");
-				PlaySound(win,1);
-				break;
-			// if level cleared screen is up and the timer is up for how long it should stay
-			// out, go back to main menu
-			case LEVEL_WIN_MESSAGE:
-				if (screenTimer.isTimeUp()) {
-					levelClearedScreen = null;
-					// TODO: Update this if another level is added
-					if (currentLevel > 4) {
-						goBackToMenu();
-					} else {
-						playLevelScreenState = PlayLevelScreenState.RUNNING;
-						this.initialize();
+				// if level is "running" update player, map and interface/overlay screen to keep game logic for the
+				// platformer level going
+				case RUNNING:
+					player.update();
+					map.update(player);
+					break;
+				// if level has been completed, bring up level cleared screen
+				case LEVEL_COMPLETED:
+					//Passes player to cleared level so the new screen can access the player's collected coins
+					levelClearedScreen = new LevelClearedScreen(player);
+					levelClearedScreen.initialize();
+					screenTimer.setWaitTime(2500);
+					playLevelScreenState = PlayLevelScreenState.LEVEL_WIN_MESSAGE;
+					currentLevel++;
+					File win = new File("Resources/finishedlevel.wav");
+					PlaySound(win,1);
+					break;
+				// if level cleared screen is up and the timer is up for how long it should stay
+				// out, go back to main menu
+				case LEVEL_WIN_MESSAGE:
+					if (screenTimer.isTimeUp()) {
+						levelClearedScreen = null;
+						// TODO: Update this if another level is added
+						if (currentLevel > 4) {
+							goBackToMenu();
+						} else {
+							playLevelScreenState = PlayLevelScreenState.RUNNING;
+							this.initialize();
+						}
 					}
-				}
-				break;
-			// if player died in level, bring up level lost screen
-			case PLAYER_DEAD:
-				levelLoseScreen = new LevelLoseScreen(this, player);
-				levelLoseScreen.initialize();
-				playLevelScreenState = PlayLevelScreenState.LEVEL_LOSE_MESSAGE;
-				break;
-			// wait on level lose screen to make a decision (either resets level or sends
-			// player back to main menu)
-			case LEVEL_LOSE_MESSAGE:
-				levelLoseScreen.update();
-				break;
+					break;
+				// if player died in level, bring up level lost screen
+				case PLAYER_DEAD:
+					levelLoseScreen = new LevelLoseScreen(this, player);
+					levelLoseScreen.initialize();
+					playLevelScreenState = PlayLevelScreenState.LEVEL_LOSE_MESSAGE;
+					break;
+				// wait on level lose screen to make a decision (either resets level or sends
+				// player back to main menu)
+				case LEVEL_LOSE_MESSAGE:
+					levelLoseScreen.update();
+					break;
 			}
 		}
 
@@ -320,7 +325,7 @@ public class PlayLevelScreen extends Screen implements PlayerListener {
 				settingsMenuItemSelected = 0;
 			} else if (settingsMenuItemSelected < 0) {
 				settingsMenuItemSelected = 3;
-			} 
+			}
 			if (currentSettingLevelHovered > 2) {
 				currentSettingLevelHovered = 0;
 			} else if (currentSettingLevelHovered < 0) {
@@ -391,7 +396,7 @@ public class PlayLevelScreen extends Screen implements PlayerListener {
 				Techno.setColor(new Color(49, 207, 240));
 				ArrowKeys.setColor(new Color(49, 207, 240));
 				WASD.setColor(new Color(49, 207, 240));
-				
+
 				aspectActive = true;
 				if (currentSettingLevelHovered == 0) {
 					smallScreen.setColor(new Color(255, 215, 0));
@@ -426,7 +431,7 @@ public class PlayLevelScreen extends Screen implements PlayerListener {
 				bigScreen.setColor(new Color(49, 207, 240));
 				ArrowKeys.setColor(new Color(49, 207, 240));
 				WASD.setColor(new Color(49, 207, 240));
-				
+
 
 				if (currentSettingLevelHovered == 0) {
 					dragonBallZ.setColor(new Color(255, 215, 0));
@@ -450,7 +455,7 @@ public class PlayLevelScreen extends Screen implements PlayerListener {
 					pointerLocationY = 405;
 				}
 			} else if (settingsMenuItemSelected == 3 && settingsActive == true) {
-				
+
 				controlsActive = true;
 				offVol.setColor(new Color(49, 207, 240));
 				lowVol.setColor(new Color(49, 207, 240));
@@ -461,7 +466,7 @@ public class PlayLevelScreen extends Screen implements PlayerListener {
 				dragonBallZ.setColor(new Color(49, 207, 240));
 				classic.setColor(new Color(49, 207, 240));
 				Techno.setColor(new Color(49, 207, 240));
-				
+
 				if (currentSettingLevelHovered == 0) {
 					ArrowKeys.setColor(new Color(255, 215, 0));
 					WASD.setColor(new Color(49, 207, 240));
@@ -474,9 +479,9 @@ public class PlayLevelScreen extends Screen implements PlayerListener {
 					pointerLocationX = 550;
 					pointerLocationY = 505;
 				}
-				
+
 			}
-			
+
 
 			if (Keyboard.isKeyUp(Key.SPACE)) {
 				keyLocker.unlockKey(Key.SPACE);
@@ -539,7 +544,7 @@ public class PlayLevelScreen extends Screen implements PlayerListener {
 								settingsActive = false;
 							}
 						} else if (settingsMenuItemSelected == 3) {
-							
+
 							if (currentSettingLevelHovered == 0) {
 								setArrowControls();
 								settingsActive = false;
@@ -560,23 +565,23 @@ public class PlayLevelScreen extends Screen implements PlayerListener {
 	public void draw(GraphicsHandler graphicsHandler) {
 		// based on screen state, draw appropriate graphics
 		switch (playLevelScreenState) {
-		case RUNNING:
-		case LEVEL_COMPLETED:
-		case PLAYER_DEAD:
-			map.draw(graphicsHandler);
-			player.draw(graphicsHandler);
-			//draws coin label to display coins collected during the level
-			coinLabel = new SpriteFont("Coins: " + player.getCoins(), 675, 40, "Comic Sans", 22, Color.yellow);
-			coinLabel.setOutlineColor(Color.black);
-			 coinLabel.setOutlineThickness(1.5f);
-			coinLabel.draw(graphicsHandler);
-			break;
-		case LEVEL_WIN_MESSAGE:
-			levelClearedScreen.draw(graphicsHandler);
-			break;
-		case LEVEL_LOSE_MESSAGE:
-			levelLoseScreen.draw(graphicsHandler);
-			break;
+			case RUNNING:
+			case LEVEL_COMPLETED:
+			case PLAYER_DEAD:
+				map.draw(graphicsHandler);
+				player.draw(graphicsHandler);
+				//draws coin label to display coins collected during the level
+				coinLabel = new SpriteFont("Coins: " + player.getCoins(), 675, 40, "Comic Sans", 22, Color.yellow);
+				coinLabel.setOutlineColor(Color.black);
+				coinLabel.setOutlineThickness(1.5f);
+				coinLabel.draw(graphicsHandler);
+				break;
+			case LEVEL_WIN_MESSAGE:
+				levelClearedScreen.draw(graphicsHandler);
+				break;
+			case LEVEL_LOSE_MESSAGE:
+				levelLoseScreen.draw(graphicsHandler);
+				break;
 		}
 		if (isGamePaused) {
 			graphicsHandler.drawFilledRectangle(0, 0, Config.WIDTH, Config.HEIGHT, new Color(0, 0, 0, 100));
@@ -699,11 +704,11 @@ public class PlayLevelScreen extends Screen implements PlayerListener {
 		mD.setClipOff();
 		this.playTheTechno();
 	}
-	
+
 	public void setArrowControls() {
 		player.updateArrowControls();
 	}
-	
+
 	public void setWASDcontrols() {
 		player.updateWASDcontrols();
 	}
@@ -715,19 +720,19 @@ public class PlayLevelScreen extends Screen implements PlayerListener {
 		musicObject.playMusic(filePath, vol);
 
 	}
-	
+
 	public static void playTheClasic() {
-		
+
 		String filePath = "Resources/OffLimits.wav";
 		MusicData musicObject = new MusicData();
 		musicObject.playMusic(filePath, vol);
 	}
-	
+
 	public static void playTheTechno() {
 		String filePath = "Resources/PimPoy.wav";
 		MusicData musicObject = new MusicData();
 		musicObject.playMusic(filePath, vol);
-		
+
 	}
 
 	@Override
