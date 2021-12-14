@@ -2,31 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ced22ea9-e13a-452d-ac7a-9b7eb379aaab" name="Changes" comment="Bugfix push test (IntelliJ)">
-      <change afterPath="$PROJECT_DIR$/src/Players/SkinState.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TutorialCrab.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NPCs/TutorialCrab.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TutorialCrab2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NPCs/TutorialCrab2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TutorialDuck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NPCs/TutorialDuck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TutorialDuck2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NPCs/TutorialDuck2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TutorialLevel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Maps/TutorialLevel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TutorialWalrus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NPCs/TutorialWalrus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TutorialWalrus2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NPCs/TutorialWalrus2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TutorialWalrus3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NPCs/TutorialWalrus3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TutorialWalrus4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NPCs/TutorialWalrus4.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Collectables/Coin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Collectables/Coin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Collectables/Invincibility.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Collectables/Invincibility.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/GameObject/AnimatedSprite.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/GameObject/AnimatedSprite.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Maps/LevelOne.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Maps/LevelOne.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Maps/LevelThree.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Maps/LevelThree.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Maps/LevelTwo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Maps/LevelTwo.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Players/Cat$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Players/Cat$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Players/Cat.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Players/Cat.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Screens/PlayLevelScreen$PlayLevelScreenState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Screens/PlayLevelScreen$PlayLevelScreenState.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SER225-Github/Screens/PlayLevelScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SER225-Github/Screens/PlayLevelScreen.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameObject/AnimatedSprite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameObject/AnimatedSprite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Collectables/Megacoin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Collectables/Megacoin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Maps/NewBossLevel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Maps/NewBossLevel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Players/Cat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Players/Cat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Screens/PlayLevelScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Screens/PlayLevelScreen.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,7 +121,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639469415500</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Bugfix push test (IntelliJ)">
+      <created>1639499729407</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1639499729407</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
