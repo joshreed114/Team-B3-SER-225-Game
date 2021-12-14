@@ -16,15 +16,15 @@ import SpriteFont.SpriteFont;
 import Utils.Point;
 
 // This class is for the walrus NPC
-public class TutorialWalrus4 extends NPC {
+public class TutorialCrab extends NPC {
 
-	public TutorialWalrus4(Point location, Map map) {
-		super(location.x, location.y, new SpriteSheet(ImageLoader.load("Walrus.png"), 24, 24), "TAIL_DOWN", 5000);
+	public TutorialCrab(Point location, Map map) {
+		super(location.x, location.y, new SpriteSheet(ImageLoader.load("Crab.png"), 31, 31), "TAIL_DOWN", 5000);
 	}
 
 	@Override
 	protected SpriteFont createMessage() {
-		return new SpriteFont("Jump on that box to finish. Good Luck!", getX(), getY() - 10, "Arial", 12, Color.BLACK);
+		return new SpriteFont("Jump up over the tree!", getX(), getY() - 10, "Arial", 12, Color.BLACK);
 	}
 
 	@Override
@@ -59,10 +59,21 @@ public class TutorialWalrus4 extends NPC {
 	public void drawMessage(GraphicsHandler graphicsHandler) {
 		// draws a box with a border (think like a speech box)
 		graphicsHandler.drawFilledRectangleWithBorder(Math.round(getCalibratedXLocation() - 2),
-				Math.round(getCalibratedYLocation() - 24), 220, 25, Color.WHITE, Color.BLACK, 2);
+				Math.round(getCalibratedYLocation() - 24), 140, 25, Color.WHITE, Color.BLACK, 2);
 
 		// draws message "Hello" in the above speech box
 		message.setLocation(getCalibratedXLocation() + 2, getCalibratedYLocation() - 8);
 		message.draw(graphicsHandler);
+	}
+
+	@Override
+	public void drawMessagePrompt(GraphicsHandler graphicsHandler) {
+		// draws a box with a border (think like a speech box)
+		graphicsHandler.drawFilledRectangleWithBorder(Math.round(getCalibratedXLocation() - 2),
+				Math.round(getCalibratedYLocation() - 24), 122 , 25, Color.WHITE, Color.BLACK, 2);
+
+		// draws prompt in the above speech box
+		messagePrompt.setLocation(getCalibratedXLocation() + 2, getCalibratedYLocation() - 8);
+		messagePrompt.draw(graphicsHandler);
 	}
 }

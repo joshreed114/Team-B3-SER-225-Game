@@ -12,6 +12,7 @@ import Maps.NewBossLevel;
 import Maps.TutorialLevel;
 import Maps.LevelOne;
 import Players.Cat;
+import Players.SkinState;
 import SpriteFont.SpriteFont;
 import Utils.Stopwatch;
 
@@ -31,6 +32,7 @@ import javax.swing.JOptionPane;
 
 // This class is for when the platformer game is actually being played
 public class PlayLevelScreen extends Screen implements PlayerListener {
+	private String activeSkin = SkinState.DEFAULT; // Default Cat skin
 	protected ScreenCoordinator screenCoordinator;
 	protected Map map;
 	protected Player player;
@@ -48,8 +50,8 @@ public class PlayLevelScreen extends Screen implements PlayerListener {
 
 	// private int x_screensize = 0;
 	// private int y_screensize = 0;
-//    private Game game;
-//    public static Camera cam;
+	//private Game game;
+	//public static Camera cam;
 
 	private boolean isGamePaused = false;
 	private SpriteFont pauseLabel;
@@ -72,6 +74,10 @@ public class PlayLevelScreen extends Screen implements PlayerListener {
 	protected SpriteFont mediumScreen;
 	protected SpriteFont bigScreen;
 
+	protected SpriteFont orangeCat;
+	protected SpriteFont brownCat;
+	protected SpriteFont whiteCat;
+
 	// music options
 
 	protected SpriteFont dragonBallZ;
@@ -91,6 +97,7 @@ public class PlayLevelScreen extends Screen implements PlayerListener {
 	protected boolean aspectActive = false;
 	protected boolean MusicActive = false;
 	protected boolean controlsActive = false;
+	//protected boolean SkinActive = false;
 	public boolean screenS = true;
 	public boolean screenM = false;
 	public boolean screenL = false;
@@ -108,6 +115,8 @@ public class PlayLevelScreen extends Screen implements PlayerListener {
 	protected SpriteFont MusicOptions;
 	protected SpriteFont Controls;
 	protected SpriteFont aspectRatioLevel;
+
+	protected SpriteFont CatOptions; // select player
 
 	public PlayLevelScreen(ScreenCoordinator screenCoordinator, GameWindow gameWindow, MusicData musicData) {
 		this.screenCoordinator = screenCoordinator;
@@ -169,6 +178,22 @@ public class PlayLevelScreen extends Screen implements PlayerListener {
 		Techno.setOutlineColor(Color.black);
 		Techno.setOutlineThickness(3);
 
+		/*
+		// Allow user to select between Cat colors (BrownCat.png, OrangeCat.png,...)
+		CatOptions = new SpriteFont("Select Player: ", 440, 475, "Comic Sans", 30, new Color(49, 207, 240));
+		CatOptions.setOutlineColor(Color.black);
+		CatOptions.setOutlineThickness(3);
+		orangeCat = new SpriteFont("Orange", 340, 510, "Comic Sans", 30, new Color(49, 207, 240));
+		orangeCat.setOutlineColor(Color.black);
+		orangeCat.setOutlineThickness(3);
+		brownCat = new SpriteFont("Brown", 480, 510, "Comic Sans", 30, new Color(49, 207, 240));
+		brownCat.setOutlineColor(Color.black);
+		brownCat.setOutlineThickness(3);
+		whiteCat = new SpriteFont("White", 620, 510, "Comic Sans", 30, new Color(49, 207, 240));
+		whiteCat.setOutlineColor(Color.black);
+		whiteCat.setOutlineThickness(3);
+		*/
+
 		// control options
 
 		Controls = new SpriteFont("Controls: ", 470, 470, "Comic Sans", 30, new Color(49, 207, 240));
@@ -216,6 +241,7 @@ public class PlayLevelScreen extends Screen implements PlayerListener {
 
 		// setup player
 		this.player = new Cat(map.getPlayerStartPosition().x, map.getPlayerStartPosition().y);
+		//this.player = new Cat(map.getPlayerStartPosition().x, map.getPlayerStartPosition().y, activeSkin);
 		if (currentLevel > 0) {
 			player.unlockPowerUpOne();
 		}
@@ -554,6 +580,27 @@ public class PlayLevelScreen extends Screen implements PlayerListener {
 								settingsActive = false;
 							}
 						}
+
+					/*
+					TODO: Indentation error?
+					} else if (settingsMenuItemSelected == 3) {
+						if (currentSettingLevelHovered == 0) {
+							this.player.setAnimations("OrangeCat.png");
+							setSkin(SkinState.ORANGE);
+							settingsActive = false;
+						}
+						if (currentSettingLevelHovered == 1) {
+							this.player.setAnimations("BrownCat.png");
+							setSkin(SkinState.BROWN);
+							settingsActive = false;
+						}
+						if (currentSettingLevelHovered == 2) {
+							this.player.setAnimations("WhiteCat.png");
+							setSkin(SkinState.WHITE);
+							settingsActive = false;
+						}
+					}
+					*/
 					}
 				}
 			} else if (menuItemSelected == 2) {
@@ -598,6 +645,7 @@ public class PlayLevelScreen extends Screen implements PlayerListener {
 				volumeLevel.draw(graphicsHandler);
 				aspectRatioLevel.draw(graphicsHandler);
 				MusicOptions.draw(graphicsHandler);
+				//CatOptions.draw(graphicsHandler);
 				Controls.draw(graphicsHandler);
 				offVol.draw(graphicsHandler);
 				lowVol.draw(graphicsHandler);
@@ -611,6 +659,11 @@ public class PlayLevelScreen extends Screen implements PlayerListener {
 				ArrowKeys.draw(graphicsHandler);
 				WASD.draw(graphicsHandler);
 
+				/*
+				orangeCat.draw(graphicsHandler);
+				brownCat.draw(graphicsHandler);
+				whiteCat.draw(graphicsHandler);
+				*/
 			}
 		}
 
@@ -622,6 +675,14 @@ public class PlayLevelScreen extends Screen implements PlayerListener {
 
 	public PlayLevelScreenState getPlayLevelScreenState() {
 		return playLevelScreenState;
+	}
+
+
+	// set Player's skin
+	public void setSkin(String filename)
+	{
+		this.activeSkin = filename;
+		this.player.setAnimations(activeSkin);
 	}
 
 	// added set volume off

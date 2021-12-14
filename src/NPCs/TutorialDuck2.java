@@ -65,4 +65,15 @@ public class TutorialDuck2 extends NPC {
 		message.setLocation(getCalibratedXLocation() + 2, getCalibratedYLocation() - 8);
 		message.draw(graphicsHandler);
 	}
+
+	@Override
+	public void drawMessagePrompt(GraphicsHandler graphicsHandler) {
+		// draws a box with a border (think like a speech box)
+		graphicsHandler.drawFilledRectangleWithBorder(Math.round(getCalibratedXLocation() - 2),
+				Math.round(getCalibratedYLocation() - 24), 122 , 25, Color.WHITE, Color.BLACK, 2);
+
+		// draws prompt in the above speech box
+		messagePrompt.setLocation(getCalibratedXLocation() + 2, getCalibratedYLocation() - 8);
+		messagePrompt.draw(graphicsHandler);
+	}
 }

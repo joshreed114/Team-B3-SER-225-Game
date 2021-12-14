@@ -21,9 +21,16 @@ import Utils.Point;
 import java.util.ArrayList;
 
 public class NewBossLevel extends Map {
+    /*
     public NewBossLevel() {
         super("boss_Level2.txt", new LevelTwoTileset(), new Point(6, 14));
     }
+    */
+    //TESTING
+    public NewBossLevel() {
+        super("boss_Level2.txt", new LevelTwoTileset(), new Point(76, 35));
+    }
+
     @Override
     public ArrayList<EnhancedMapTile> loadEnhancedMapTiles() {
         ArrayList<EnhancedMapTile> enhancedMapTiles = new ArrayList<>();
