@@ -3,6 +3,8 @@ package GameObject;
 import Engine.GraphicsHandler;
 import Utils.Stopwatch;
 
+// import Engine.ImageLoader; // For updating animations
+
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.util.HashMap;
@@ -123,6 +125,17 @@ public class AnimatedSprite implements IntersectableRectangle {
 	public void draw(GraphicsHandler graphicsHandler) {
 		currentFrame.draw(graphicsHandler);
 	}
+
+	/*
+	// Allows PlayLevelScreen to update Cat skin without creating new Player instance
+	public void setAnimations(String filename)
+	{
+		this.animations = getAnimations(new SpriteSheet(ImageLoader.load(filename), 24, 24));
+		// calls updateCurrentFrame so that the game immediately draws the updated sprite without waiting for new animation name
+		// if you remove this, there will be a lag between the skin change and the updated sprite showing
+		this.updateCurrentFrame();
+	}
+	*/	
 
     public void drawBounds(GraphicsHandler graphicsHandler, Color color) {
 		currentFrame.drawBounds(graphicsHandler, color);

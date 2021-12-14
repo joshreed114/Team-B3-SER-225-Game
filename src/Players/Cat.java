@@ -11,10 +11,29 @@ import GameObject.ImageEffect;
 import GameObject.SpriteSheet;
 import Level.Player;
 
+/*
+NOTES
+* The game (in Settings [a.k.a PlayLevelScreen]) updates the Player's [Cat's] "skin" by calling a "new"
+* method called setAnimations in AnimatedSprite.java [public], which allows PlayLevelScreen to update
+* which SpriteSheet the game is drawing for the Player WITHOUT having to instantiate a new Player.
+
+TODO: In Settings, draw Skin on screen instead of "Orange", "Brown", etc.
+
+* The front-end implementation of cosmetics is commented out throughout the codebase
+* (see classes spelled out above to know in which classes the comments are)
+* But, the back-end is created and can be used pretty easily. Start here with Cat.java, then head over to
+* PlayLevelScreen to view the front-end implementation. Note: some imports, constructors, methods, etc.
+* are all commented out, so if there is a multi-line comment in one of the concerned classes, it probably
+* has something to do with the cosmetics implementation
+
+*/
+
 // This is the class for the Cat player character
 // basically just sets some values for physics and then defines animations
 public class Cat extends Player {
 
+	// Image argument should be a .png file in Resources (such as BrownCat.png or OrangeCat.png)
+	// Image argument gets passed up to Screencoordinator, PlayLevelScreen
 	public Cat(float x, float y) {
 		super(new SpriteSheet(ImageLoader.load("Cat.png"), 24, 24), x, y, "STAND_RIGHT");
 		gravity = .5f;
